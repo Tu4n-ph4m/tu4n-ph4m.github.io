@@ -1,105 +1,278 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu4n-ph4m | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* --- Variables --- */
+:root {
+    /* Light Mode */
+    --bg-color: #fafafa; /* Softer than pure white */
+    --text-color: #2d3436;
+    --text-secondary: #636e72;
+    --accent: #0984e3; /* Nice professional blue */
+    --accent-hover: #74b9ff;
+    --card-bg: #ffffff;
+    --border: #e1e1e1;
+    --nav-bg: rgba(250, 250, 250, 0.8); /* Translucent */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">TM</a>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#about" class="nav-link">About</a>
-                <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+[data-theme="dark"] {
+    /* Dark Mode - Soft Darks, not pitch black */
+    --bg-color: #1a1a1a;
+    --text-color: #f1f2f6;
+    --text-secondary: #a4b0be;
+    --accent: #74b9ff;
+    --accent-hover: #0984e3;
+    --card-bg: #2d2d2d;
+    --border: #404040;
+    --nav-bg: rgba(26, 26, 26, 0.8);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
 
-    <main class="container">
-        
-        <section id="home" class="hero">
-            <div class="profile-img-container">
-                <img src="https://github.com/Tu4n-ph4m.png" alt="Tu4n-ph4m" class="profile-img">
-            </div>
-            <h1>Tu4n-ph4m</h1>
-            <p class="tagline">Developer, Creator, Open Source Enthusiast.</p>
-            
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">Projects</a>
-                <a href="https://github.com/Tu4n-ph4m" target="_blank" class="btn">GitHub</a>
-                <a href="mailto:your-email@example.com" class="btn">Contact</a>
-            </div>
-        </section>
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 
-        <hr class="divider">
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p class="section-intro">Here are some of the things I've been working on.</p>
-            
-            <div class="grid">
-                <a href="https://github.com/Tu4n-ph4m" class="card">
-                    <div class="card-content">
-                        <h3>Awesome Project</h3>
-                        <p>A description of a cool project you built. It solves X problem using Y technology.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>AI</span>
-                        </div>
-                    </div>
-                </a>
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-                <a href="https://github.com/Tu4n-ph4m" class="card">
-                    <div class="card-content">
-                        <h3>Web App Tool</h3>
-                        <p>A useful tool for developers to automate their daily tasks efficiently.</p>
-                        <div class="tags">
-                            <span>JavaScript</span>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
+/* --- Layout --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
 
-        <section id="about">
-            <h2>About & Education</h2>
-            <div class="text-content">
-                <p>
-                    I am a passionate developer currently focused on building accessible and performant web applications. 
-                    I enjoy solving complex problems and contributing to open source.
-                </p>
-                <br>
-                <h3>Education</h3>
-                <ul class="timeline">
-                    <li>
-                        <span class="date">2020 - 2024</span>
-                        <strong>University Name</strong> - B.S. in Computer Science
-                    </li>
-                </ul>
-            </div>
-        </section>
+/* --- Animations --- */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-    </main>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    <footer>
-        <p>&copy; 2025 Tu4n-ph4m. Built with code.</p>
-        <div class="socials">
-            <a href="https://github.com/Tu4n-ph4m" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-    </footer>
+/* --- Navbar (Glassmorphism) --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px); /* The blur effect */
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--accent); }
+
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+#theme-toggle:hover { transform: rotate(15deg); }
+
+/* --- Hero Section --- */
+.hero {
+    padding: 6rem 0 4rem;
+    display: flex;
+    flex-direction: column-reverse; /* Image top on mobile */
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.highlight { color: var(--accent); }
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bg-color);
+    box-shadow: var(--shadow);
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+@media (min-width: 600px) { .hero-buttons { justify-content: flex-start; } }
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-color);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Section Headers --- */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+}
+
+.section-header h2 { font-size: 1.5rem; white-space: nowrap; }
+.line { width: 100%; height: 1px; background: var(--border); }
+
+/* --- Projects Grid --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+.card p { color: var(--text-secondary); font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.5rem; }
+
+.tags span {
+    font-size: 0.75rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* --- About Grid --- */
+.info-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item { display: flex; flex-direction: column; }
+.label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.value { font-weight: 600; }
+
+/* --- Footer --- */
+footer {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.socials {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.socials a {
+    margin: 0 0.8rem;
+    color: var(--text-color);
+    transition: color 0.2s;
+}
+
+.socials a:hover { color: var(--accent); }
