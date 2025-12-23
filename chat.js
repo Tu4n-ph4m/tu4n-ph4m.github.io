@@ -1,27 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const keyContainer = document.getElementById('key-container');
     const chatWindow = document.getElementById('chat-window');
-    const apiKeyInput = document.getElementById('api-key');
-    const saveKeyBtn = document.getElementById('save-key-btn');
     const sendBtn = document.getElementById('send-btn');
     const userInput = document.getElementById('user-input');
     const messagesContainer = document.getElementById('messages');
+    
+    // 1. Hide the Key Input (We don't need it anymore!)
+    const keyContainer = document.getElementById('key-container');
+    if (keyContainer) keyContainer.style.display = 'none';
+    if (chatWindow) chatWindow.style.display = 'flex';
 
-    let apiKey = '';
+   
+    const BACKEND_URL = "https://chat-backend-97qa.vercel.app/api"; 
 
-    // 1. Handle API Key Entry
-    saveKeyBtn.addEventListener('click', () => {
-        const key = apiKeyInput.value.trim();
-        if (key.startsWith('sk-')) {
-            apiKey = key;
-            keyContainer.style.display = 'none';
-            chatWindow.style.display = 'flex';
-        } else {
-            alert('Please enter a valid OpenAI API Key (starts with sk-...)');
-        }
-    });
-
-    // 2. Handle Sending Messages
+    // 3. Handle Sending Messages
     sendBtn.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
@@ -31,30 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = userInput.value.trim();
         if (!text) return;
 
-        // Add User Message to UI
+        // Add User Message
         addMessage(text, 'user');
         userInput.value = '';
 
         // Add Loading Spinner
-        const loadingId = addMessage('Thinking...', 'bot', true);
+        const loadingId = addMessage('Thinking...', 'bot');
 
         try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            // Send message to YOUR Vercel server (not OpenAI directly)
+            const response = await fetch(BACKEND_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system", 
-                            content: "You are a helpful portfolio assistant for Tu4n-ph4m. You answer questions about his skills (HTML, CSS, JS, React, Python), his projects, and his background. Be concise, professional, and friendly."
-                        },
-                        { role: "user", content: text }
-                    ]
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text })
             });
 
             const data = await response.json();
@@ -62,35 +42,38 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove loading spinner
             removeMessage(loadingId);
 
-            if (data.error) {
-                addMessage("Error: " + data.error.message, 'bot');
+            if (data.choices && data.choices[0]) {
+                // Display the answer from Gemini/Vercel
+                addMessage(data.choices[0].message.content, 'bot');
             } else {
-                const botReply = data.choices[0].message.content;
-                addMessage(botReply, 'bot');
+                addMessage("Sorry, I'm having trouble connecting.", 'bot');
             }
 
         } catch (error) {
             removeMessage(loadingId);
-            addMessage("Error connecting to AI.", 'bot');
+            addMessage("Error: Server not responding.", 'bot');
             console.error(error);
         }
     }
 
-    // Helper: Add Message to UI
-    function addMessage(text, sender, isLoading = false) {
+    // --- Helper Functions ---
+
+    function addMessage(text, sender) {
         const div = document.createElement('div');
         div.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
-        const id = 'msg-' + Date.now();
-        div.id = id;
-
+        div.id = 'msg-' + Date.now();
+        
+        // Add icon for bot
+        const iconHtml = sender === 'bot' ? '<div class="avatar"><i class="fas fa-robot"></i></div>' : '';
+        
         div.innerHTML = `
-            ${sender === 'bot' ? '<div class="avatar"><i class="fas fa-robot"></i></div>' : ''}
+            ${iconHtml}
             <div class="text">${text}</div>
         `;
         
         messagesContainer.appendChild(div);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        return id;
+        return div.id;
     }
 
     function removeMessage(id) {
