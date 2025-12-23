@@ -1,0 +1,254 @@
+/* Variables for Light Mode (Default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --secondary-text: #666666;
+    --accent-color: #000000;
+    --card-bg: #f9f9f9;
+    --card-hover: #f0f0f0;
+    --border-color: #eaeaea;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* Variables for Dark Mode */
+[data-theme="dark"] {
+    --bg-color: #111111;
+    --text-color: #eeeeee;
+    --secondary-text: #aaaaaa;
+    --accent-color: #ffffff;
+    --card-bg: #1c1c1c;
+    --card-hover: #252525;
+    --border-color: #333333;
+    --nav-bg: rgba(17, 17, 17, 0.85);
+}
+
+/* Reset & Basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Layout */
+.container {
+    max-width: 720px; /* Constrained width like the reference site */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+}
+
+.nav-link:hover {
+    color: var(--text-color);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    padding: 0.2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0 2rem;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--border-color);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 3rem 0;
+}
+
+/* Projects Grid */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    display: block;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 1rem;
+}
+
+.tags span {
+    display: inline-block;
+    background: var(--border-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    font-family: monospace;
+}
+
+/* About & Education */
+.timeline {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.timeline li {
+    margin-bottom: 1rem;
+}
+
+.date {
+    display: inline-block;
+    min-width: 100px;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.socials {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.socials a {
+    margin: 0 0.5rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.socials a:hover {
+    opacity: 1;
+}
