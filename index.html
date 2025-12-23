@@ -1,127 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tuan Pham</title>
-
-  <style>
-  :root {
-    --text-main: #111;
-    --text-muted: #666;
-    --link: #111;
-    --bg-start: #fafafa;
-    --bg-end: #ffffff;
-  }
-
-  body {
-    margin: 0;
-    color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Helvetica, Arial, sans-serif;
-
-    /* Subtle AI-style background */
-    background: radial-gradient(
-      circle at top left,
-      var(--bg-start),
-      var(--bg-end) 60%
-    );
-  }
-
-  .container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 48px;
-  }
-
-  .hero {
-    max-width: 880px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  img {
-    width: 100%;
-    border-radius: 4px;
-    filter: grayscale(100%);
-  }
-
-  h1 {
-    font-size: 2.1rem;
-    font-weight: 500;
-    margin: 0 0 12px 0;
-    letter-spacing: -0.02em;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-bottom: 28px;
-  }
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    margin-bottom: 32px;
-    max-width: 520px;
-  }
-
-  .links a {
-    margin-right: 24px;
-    font-size: 0.95rem;
-    text-decoration: none;
-    color: var(--link);
-    border-bottom: 1px solid transparent;
-  }
-
-  .links a:hover {
-    border-bottom: 1px solid var(--link);
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
-
-    img {
-      max-width: 220px;
-    }
-  }
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu4n-ph4m | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="container">
-    <div class="hero">
-      <img src="4BDC89B2-C453-4EA5-B7E7-E39D61727CDB_1_105_c.jpeg" alt="Tuan Pham" />
 
-      <div>
-        <h1>Tuan Pham</h1>
-        <div class="subtitle">
-          PhD Student · Brown University
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">TM</a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
+    </nav>
 
-        <p>
-          I work on machine learning methods for biological sequence
-          and multi-omic data, with a focus on regulatory RNA structure
-          and gene regulation.
-        </p>
+    <main class="container">
+        
+        <section id="home" class="hero">
+            <div class="profile-img-container">
+                <img src="https://github.com/Tu4n-ph4m.png" alt="Tu4n-ph4m" class="profile-img">
+            </div>
+            <h1>Tu4n-ph4m</h1>
+            <p class="tagline">Developer, Creator, Open Source Enthusiast.</p>
+            
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">Projects</a>
+                <a href="https://github.com/Tu4n-ph4m" target="_blank" class="btn">GitHub</a>
+                <a href="mailto:your-email@example.com" class="btn">Contact</a>
+            </div>
+        </section>
 
-        <div class="links">
-          <a href="research.html">Research</a>
-          <a href="projects.html">Projects</a>
-          <a href="cv.html">CV</a>
-          <a href="https://github.com/Tu4n-ph4m">GitHub</a>
+        <hr class="divider">
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p class="section-intro">Here are some of the things I've been working on.</p>
+            
+            <div class="grid">
+                <a href="https://github.com/Tu4n-ph4m" class="card">
+                    <div class="card-content">
+                        <h3>Awesome Project</h3>
+                        <p>A description of a cool project you built. It solves X problem using Y technology.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>AI</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Tu4n-ph4m" class="card">
+                    <div class="card-content">
+                        <h3>Web App Tool</h3>
+                        <p>A useful tool for developers to automate their daily tasks efficiently.</p>
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About & Education</h2>
+            <div class="text-content">
+                <p>
+                    I am a passionate developer currently focused on building accessible and performant web applications. 
+                    I enjoy solving complex problems and contributing to open source.
+                </p>
+                <br>
+                <h3>Education</h3>
+                <ul class="timeline">
+                    <li>
+                        <span class="date">2020 - 2024</span>
+                        <strong>University Name</strong> - B.S. in Computer Science
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tu4n-ph4m. Built with code.</p>
+        <div class="socials">
+            <a href="https://github.com/Tu4n-ph4m" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-      </div>
-    </div>
-  </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
