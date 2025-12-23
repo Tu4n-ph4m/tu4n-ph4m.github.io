@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuan Pham</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .hero {
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 10px 0;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin: 0 0 20px 0;
+      color: #444;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .links a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      img {
+        max-width: 250px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="hero">
+      <img src="profile.jpg" alt="Tuan Pham" />
+
+      <div>
+        <h1>Tuan Pham</h1>
+        <h2>PhD Student · Brown University</h2>
+
+        <p>
+          I work at the intersection of artificial intelligence and biology,
+          with a focus on regulatory RNA structure, gene regulation, and
+          multi-omic modeling.
+        </p>
+
+        <div class="links">
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="cv.html">CV</a>
+          <a href="https://github.com/Tu4n-ph4m">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
