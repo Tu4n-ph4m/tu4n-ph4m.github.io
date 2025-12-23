@@ -6,12 +6,19 @@
   <title>Tuan Pham</title>
 
   <style>
+    :root {
+      --text-main: #111;
+      --text-muted: #666;
+      --link: #111;
+      --bg: #ffffff;
+    }
+
     body {
       margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                    Helvetica, Arial, sans-serif;
-      background: #ffffff;
-      color: #111;
     }
 
     .container {
@@ -19,60 +26,64 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px;
+      padding: 48px;
     }
 
     .hero {
-      max-width: 900px;
+      max-width: 880px;
+      width: 100%;
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 50px;
+      grid-template-columns: 260px 1fr;
+      gap: 56px;
       align-items: center;
     }
 
     img {
       width: 100%;
-      border-radius: 6px;
+      border-radius: 4px;
+      filter: grayscale(100%);
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin: 0 0 10px 0;
+      font-size: 2.1rem;
+      font-weight: 500;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.02em;
     }
 
-    h2 {
-      font-weight: 400;
-      font-size: 1.2rem;
-      margin: 0 0 20px 0;
-      color: #444;
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
     }
 
     p {
       font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 25px;
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 520px;
     }
 
     .links a {
-      margin-right: 20px;
+      margin-right: 24px;
+      font-size: 0.95rem;
       text-decoration: none;
-      color: #0066cc;
-      font-weight: 500;
+      color: var(--link);
+      border-bottom: 1px solid transparent;
     }
 
     .links a:hover {
-      text-decoration: underline;
+      border-bottom: 1px solid var(--link);
     }
 
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 36px;
       }
 
       img {
-        max-width: 250px;
-        margin: 0 auto;
+        max-width: 220px;
       }
     }
   </style>
@@ -81,16 +92,18 @@
 <body>
   <div class="container">
     <div class="hero">
-      <img src="profile.jpg" alt="Tuan Pham" />
+      <img src="4BDC89B2-C453-4EA5-B7E7-E39D61727CDB_1_105_c.jpeg" alt="Tuan Pham" />
 
       <div>
         <h1>Tuan Pham</h1>
-        <h2>PhD Student · Brown University</h2>
+        <div class="subtitle">
+          PhD Student · Brown University
+        </div>
 
         <p>
-          I work at the intersection of artificial intelligence and biology,
-          with a focus on regulatory RNA structure, gene regulation, and
-          multi-omic modeling.
+          I work on machine learning methods for biological sequence
+          and multi-omic data, with a focus on regulatory RNA structure
+          and gene regulation.
         </p>
 
         <div class="links">
