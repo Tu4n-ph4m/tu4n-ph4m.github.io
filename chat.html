@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI | Tu4n-ph4m</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TM.</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#projects" class="nav-link">Work</a>
+                <a href="#" class="nav-link active">AI Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container fade-in">
+        <section class="chat-section">
+            <div class="section-header">
+                <h2>AI Assistant</h2>
+                <p>Ask anything about my skills or background.</p>
+            </div>
+
+            <div id="key-container" class="key-input-box">
+                <i class="fas fa-key"></i>
+                <input type="password" id="api-key" placeholder="Enter your OpenAI API Key to start...">
+                <button id="save-key-btn" class="btn primary-btn">Start Chat</button>
+                <p class="tiny-text">Your key is stored locally in your browser and never sent to my server.</p>
+            </div>
+
+            <div class="chat-window" id="chat-window" style="display: none;">
+                <div class="messages" id="messages">
+                    <div class="message bot-message">
+                        <div class="avatar"><i class="fas fa-robot"></i></div>
+                        <div class="text">Hello! I'm Tu4n-ph4m's AI assistant. Ask me about his projects, skills, or experience!</div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-area">
+                    <input type="text" id="user-input" placeholder="Type a message...">
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="chat.js"></script>
+</body>
+</html>
