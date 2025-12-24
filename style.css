@@ -770,3 +770,10 @@ body::after {
   color: #e5e7eb;
   opacity: 1;
 }
+.card-image {
+  width: 100%;
+  height: 100px;          /* ↓ smaller image */
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
