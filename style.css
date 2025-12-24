@@ -595,12 +595,12 @@ body::after {
 }
 /* --- Scrollbar-style section nav --- */
 .scrollbar-nav {
-  position: sticky;
+  position: fixed;           /* was: sticky */
   left: 28px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 120;
-  width: 18px; /* keeps it minimal */
+  width: 18px;               /* keeps it minimal */
 }
 
 .scrollbar-track {
@@ -611,6 +611,7 @@ body::after {
   background: rgba(148, 163, 184, 0.18);
   overflow: visible;
 }
+
 
 .scrollbar-fill {
   position: absolute;
@@ -720,5 +721,4 @@ body::after {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  position: relative;          /* NEW: anchors the bar */
 }
