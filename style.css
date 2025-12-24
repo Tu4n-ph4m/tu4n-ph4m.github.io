@@ -399,3 +399,43 @@ footer {
 .chat-input-area button:hover {
     background: var(--accent-hover);
 }
+/* --- Chat Widget Styling --- */
+#chat-launcher {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;          /* Bigger size */
+    height: 70px;         /* Bigger size */
+    border-radius: 50%;
+    background-color: var(--accent); /* Matches your blue theme */
+    color: white;
+    border: none;
+    font-size: 35px;      /* Bigger icon */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 9999;        /* CRITICAL: Force it to be the top layer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+#chat-launcher:hover {
+    transform: scale(1.1);
+}
+
+#chat-window {
+    position: fixed;
+    bottom: 110px;        /* Sits above the button */
+    right: 30px;
+    width: 350px;
+    height: 500px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    z-index: 9999;        /* Keeps it on top */
+    display: none;        /* Hidden by default */
+    flex-direction: column;
+    overflow: hidden;
+}
