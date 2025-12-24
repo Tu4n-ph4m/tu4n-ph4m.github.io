@@ -547,3 +547,48 @@ body::after {
   50% { transform: translate(-4%, 3%); }
   100% { transform: translate(0, 0); }
 }
+.timeline-nav {
+  position: fixed;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 100;
+}
+
+.timeline-nav a {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(203, 213, 225, 0.5);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+/* dot */
+.timeline-nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: rgba(203, 213, 225, 0.4);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+/* active section */
+.timeline-nav a.active {
+  color: var(--accent);
+}
+
+.timeline-nav a.active::before {
+  background: var(--accent);
+  transform: translateY(-50%) scale(1.4);
+}
