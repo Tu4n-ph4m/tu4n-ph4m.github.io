@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const keyContainer = document.getElementById('key-container');
     if (keyContainer) keyContainer.style.display = 'none';
     const launcherBtn = document.getElementById('chat-launcher');
-    
+    addMessage("Hi, I'm Tuan's assistant. How can I help you today?", 'bot');
     // Toggle Logic: Open and close the chat
     if (launcherBtn) {
         launcherBtn.addEventListener('click', () => {
