@@ -7,8 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Hide the Key Input (We don't need it anymore!)
     const keyContainer = document.getElementById('key-container');
     if (keyContainer) keyContainer.style.display = 'none';
-    if (chatWindow) chatWindow.style.display = 'flex';
-
+    const launcherBtn = document.getElementById('chat-launcher');
+    
+    // Toggle Logic: Open and close the chat
+    if (launcherBtn) {
+        launcherBtn.addEventListener('click', () => {
+            if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+                chatWindow.style.display = 'flex'; // Show chat
+                launcherBtn.innerHTML = '✖';      // Change icon to X
+            } else {
+                chatWindow.style.display = 'none'; // Hide chat
+                launcherBtn.innerHTML = '💬';      // Change icon back to chat bubble
+            }
+        });
+    }
    
     const BACKEND_URL = "https://chat-backend-97qa.vercel.app/api"; 
 
