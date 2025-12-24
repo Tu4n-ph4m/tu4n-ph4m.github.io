@@ -114,13 +114,18 @@
     </footer>
 
     <div id="chat-window">
-        <div id="chat-header">Chat with AI</div>
-        <div id="messages"></div>
-        <div class="input-area">
+        <div style="background: var(--accent); color: white; padding: 15px; font-weight: bold; font-size: 1.1rem;">
+            Chat Assistant
+        </div>
+
+        <div id="messages" class="messages"></div>
+        
+        <div class="chat-input-area">
             <input type="text" id="user-input" placeholder="Type a message...">
             <button id="send-btn">Send</button>
         </div>
     </div>
+
 
     <button id="chat-launcher">💬</button>
 
