@@ -41,3 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+const text = "Hello, I'm Tuan Pham.";
+const speed = 70; // ms per character
+
+let i = 0;
+const target = document.getElementById("typed-text");
+
+function typeWriter() {
+  if (i < text.length) {
+    target.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.addEventListener("load", typeWriter);
