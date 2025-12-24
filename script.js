@@ -63,3 +63,40 @@ function typeWriter() {
 }
 
 window.addEventListener("load", typeWriter);
+(() => {
+  const fill = document.getElementById("scrollbar-fill");
+  const ticks = document.querySelectorAll(".scrollbar-tick");
+  const sections = [...document.querySelectorAll("section[id]")];
+
+  function updateProgress() {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+    if (fill) fill.style.height = `${pct}%`;
+  }
+
+  function updateActiveTick() {
+    const scrollY = window.scrollY;
+    let currentId = sections[0]?.id || "";
+
+    for (const s of sections) {
+      const top = s.offsetTop - 140;
+      if (scrollY >= top) currentId = s.id;
+    }
+
+    ticks.forEach(t => {
+      t.classList.toggle("active", t.dataset.section === currentId);
+    });
+  }
+
+  function onScroll() {
+    updateProgress();
+    updateActiveTick();
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+})();
