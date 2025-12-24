@@ -41,17 +41,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-const text = "Hello, I'm Tuan Pham.";
-const speed = 70; // ms per character
+const fullText = "Hello, I'm Tuan Pham.";
+const name = "Tuan Pham";
+const speed = 70;
 
 let i = 0;
 const target = document.getElementById("typed-text");
 
 function typeWriter() {
-  if (i < text.length) {
-    target.textContent += text.charAt(i);
+  if (i < fullText.length) {
+    target.textContent += fullText.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
+  } else {
+    // Once typing is complete, recolor the name
+    target.innerHTML = fullText.replace(
+      name,
+      `<span class="highlight">${name}</span>`
+    );
   }
 }
 
