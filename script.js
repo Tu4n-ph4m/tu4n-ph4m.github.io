@@ -116,3 +116,41 @@ window.addEventListener("load", typeWriter);
   window.addEventListener("resize", update);
   update();
 })();
+(() => {
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll(".toc a");
+  const indicator = document.querySelector(".toc-indicator");
+
+  if (!indicator || !links.length || !sections.length) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const activeLink = document.querySelector(
+          `.toc a[data-section="${entry.target.id}"]`
+        );
+
+        if (!activeLink) return;
+
+        links.forEach(link =>
+          link.classList.toggle("active", link === activeLink)
+        );
+
+        const offset =
+          activeLink.offsetTop +
+          activeLink.offsetHeight / 2 -
+          indicator.offsetHeight / 2;
+
+        indicator.style.transform = `translateY(${offset}px)`;
+      });
+    },
+    {
+      rootMargin: "-35% 0px -35% 0px",
+      threshold: 0.1
+    }
+  );
+
+  sections.forEach(section => observer.observe(section));
+})();
