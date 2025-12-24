@@ -64,7 +64,7 @@ function typeWriter() {
 
 window.addEventListener("load", typeWriter);
 (() => {
-  const fill = document.getElementById("scrollbar-fill");
+    const fill = document.querySelector(".scrollbar-fill");
   const ticks = document.querySelectorAll(".scrollbar-tick");
   const sections = [...document.querySelectorAll("section[id]")];
 
