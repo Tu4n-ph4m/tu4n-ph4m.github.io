@@ -593,15 +593,16 @@ body::after {
   background: var(--accent);
   transform: translateY(-50%) scale(1.4);
 }
-/* --- Scrollbar-style section nav --- */
 .scrollbar-nav {
-  position: fixed;           /* was: sticky */
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed;              /* LOCKED to viewport */
+  left: 28px;                   /* horizontal position */
+  top: 50%;                     /* vertical center */
+  transform: translateY(-50%);  /* true centering */
   z-index: 120;
-  width: 18px;               /* keeps it minimal */
+  width: 18px;
+  pointer-events: auto;
 }
+
 
 .scrollbar-track {
   position: relative;
@@ -671,7 +672,7 @@ body::after {
 }
 
 /* hide on smaller screens */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .scrollbar-nav { display: none; }
 }
 /* =====================================
