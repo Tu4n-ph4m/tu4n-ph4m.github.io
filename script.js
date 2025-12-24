@@ -100,3 +100,32 @@ window.addEventListener("load", typeWriter);
   window.addEventListener("resize", onScroll);
   onScroll();
 })();
+/* =====================================
+   Minimal Research-Grade Scrollbar
+   ===================================== */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+/* WebKit (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.6);
+}
