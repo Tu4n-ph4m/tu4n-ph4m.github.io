@@ -12,6 +12,7 @@
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+
 [data-theme="dark"] {
     /* Dark Mode - Soft Darks, not pitch black */
     --bg-color: #1a1a1a;
@@ -591,4 +592,84 @@ body::after {
 .timeline-nav a.active::before {
   background: var(--accent);
   transform: translateY(-50%) scale(1.4);
+}
+/* --- Scrollbar-style section nav --- */
+.scrollbar-nav {
+  position: fixed;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 120;
+  width: 18px; /* keeps it minimal */
+}
+
+.scrollbar-track {
+  position: relative;
+  width: 4px;
+  height: 320px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.18);
+  overflow: visible;
+}
+
+.scrollbar-fill {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  height: 0%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: height 0.15s ease-out;
+}
+
+/* ticks */
+.scrollbar-tick {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: var(--pos);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0); /* placeholder for smoothness */
+  cursor: pointer;
+}
+
+.scrollbar-tick span {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(203, 213, 225, 0.55);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+/* show labels on hover */
+.scrollbar-tick:hover span {
+  opacity: 1;
+  color: rgba(203, 213, 225, 0.9);
+}
+
+/* active tick */
+.scrollbar-tick.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.12);
+}
+
+.scrollbar-tick.active span {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* hide on smaller screens */
+@media (max-width: 900px) {
+  .scrollbar-nav { display: none; }
 }
