@@ -100,46 +100,19 @@ window.addEventListener("load", typeWriter);
   window.addEventListener("resize", onScroll);
   onScroll();
 })();
-/* =====================================
-   Minimal Research-Grade Scrollbar
-   ===================================== */
+(() => {
+  const bar = document.getElementById("scroll-progress");
+  if (!bar) return;
 
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
-}
+  function update() {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = `${pct}%`;
+  }
 
-/* WebKit (Chrome, Safari, Edge) */
-*::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(148, 163, 184, 0.35);
-  border-radius: 999px;
-  transition: background-color 0.2s ease;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(148, 163, 184, 0.6);
-}
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background: linear-gradient(
-    to right,
-    rgba(148, 163, 184, 0.4),
-    var(--accent)
-  );
-  z-index: 1000;
-  pointer-events: none;
-}
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
