@@ -595,7 +595,7 @@ body::after {
 }
 /* --- Scrollbar-style section nav --- */
 .scrollbar-nav {
-  position: fixed;
+  position: absolute;
   left: 28px;
   top: 50%;
   transform: translateY(-50%);
@@ -715,4 +715,10 @@ body::after {
   );
   z-index: 1000;
   pointer-events: none;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;          /* NEW: anchors the bar */
 }
