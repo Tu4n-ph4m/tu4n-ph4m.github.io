@@ -25,13 +25,23 @@
     </div>
 
   </div>
-</nav>
+<nav class="scrollbar-nav" aria-label="Section progress">
+  <div class="scrollbar-track">
+    <div class="scrollbar-fill" id="scrollbar-fill"></div>
 
-    <nav class="timeline-nav">
-  <a href="#home" data-section="home">Home</a>
-  <a href="#about" data-section="about">About</a>
-  <a href="#projects" data-section="projects">Projects</a>
-  <a href="#publications" data-section="publications">Publications</a>
+    <a class="scrollbar-tick" href="#home" data-section="home" style="--pos: 0%;">
+      <span>Home</span>
+    </a>
+    <a class="scrollbar-tick" href="#about" data-section="about" style="--pos: 33%;">
+      <span>About</span>
+    </a>
+    <a class="scrollbar-tick" href="#projects" data-section="projects" style="--pos: 66%;">
+      <span>Projects</span>
+    </a>
+    <a class="scrollbar-tick" href="#publications" data-section="publications" style="--pos: 100%;">
+      <span>Publications</span>
+    </a>
+  </div>
 </nav>
 
 
