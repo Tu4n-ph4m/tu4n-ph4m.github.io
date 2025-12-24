@@ -723,3 +723,50 @@ body::after {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+.toc {
+  position: fixed;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-left: 1.25rem;
+  z-index: 50;
+}
+
+/* vertical timeline */
+.toc::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(148, 163, 184, 0.25);
+}
+
+/* moving dot */
+.toc-indicator {
+  position: absolute;
+  left: -0.4rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: #e5e7eb;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toc a {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(148, 163, 184, 0.45);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.toc a.active {
+  color: #e5e7eb;
+  opacity: 1;
+}
