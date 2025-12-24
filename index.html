@@ -1,188 +1,88 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuan Pham | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuan Pham | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <!-- Optional: TOC (recommended outside navbar) -->
+  <nav class="toc" aria-label="Table of contents">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+  </nav>
 
-   <nav class="navbar">
-  <div class="nav-container">
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#about" class="nav-link">About</a>
 
-
-    <div class="nav-menu">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#projects" class="nav-link">Work</a>
-      <a href="#about" class="nav-link">About</a>
-
-      <button id="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fas fa-sun"></i>
-      </button>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
     </div>
+  </nav>
 
-  </div>
-       <div id="scroll-progress"></div>
+  <main class="container fade-in">
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </h1>
+        <p class="tagline">I decode biology with AI</p>
+      </div>
 
-<nav class="scrollbar-nav" aria-label="Section progress">
-  <div class="scrollbar-track">
-    <div class="scrollbar-fill" id="scrollbar-fill"></div>
+      <div class="hero-image">
+        <img
+          src="4BDC89B2-C453-4EA5-B7E7-E39D61727CDB_1_105_c.jpeg"
+          alt="Tuan Pham"
+          class="profile-img"
+        />
+      </div>
+    </section>
 
-    <a class="scrollbar-tick" href="#home" data-section="home" style="--pos: 0%;">
-      <span>Home</span>
-    </a>
-    <a class="scrollbar-tick" href="#about" data-section="about" style="--pos: 33%;">
-      <span>About</span>
-    </a>
-    <a class="scrollbar-tick" href="#projects" data-section="projects" style="--pos: 66%;">
-      <span>Projects</span>
-    </a>
-    <a class="scrollbar-tick" href="#publications" data-section="publications" style="--pos: 100%;">
-      <span>Publications</span>
-    </a>
-  </div>
-</nav>
+    <section id="about">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="line"></div>
+      </div>
 
+      <div class="about-content">
+        <p>
+          I am a PhD Candidate in Computational Molecular Biology at Brown University, advised by Dr. Ritambhara Singh.<br>
+          My research focuses on gene regulation using Graph Neural Networks and Optimal Transport.<br>
+          Previously, I studied RNA secondary structures and satellite DNAs at the University of Rochester.<br>
+          Outside the lab, I enjoy hiking, cooking, and learning about fish.
+        </p>
 
-    <main class="container fade-in">
-        
-        <section id="home" class="hero">
-            <div class="hero-text">
-                <h1>
-                  <span id="typed-text"></span><span class="cursor">|</span>
-                </h1>
-                <p class="tagline">I decode biology with AI</p>
-                
-                
-             
-            </div>
-          <div class="hero-image">
-                <img src="4BDC89B2-C453-4EA5-B7E7-E39D61727CDB_1_105_c.jpeg" alt="Tuan Pham" class="profile-img">
-            </div>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">Education</span>
+            <span class="value">PhD Candidate, Computational Biology</span>
+            <span class="value">Brown University</span>
 
-        </section>
-
- <section id="about">
-             <div class="section-header">
-                <h2>About Me</h2>
-                <div class="line"></div>
-            </div>
-            <div class="about-content">
-             <p>
-I am a PhD Candidate in Computational Molecular Biology at Brown University, advised by Dr. Ritambhara Singh. 
-My research focuses on gene regulation using Graph Neural Networks and Optimal Transport.<br>
-Previously, I studied RNA secondary structures and satellite DNAs at the University of Rochester.<br>
-Outside the lab, I enjoy hiking, cooking, and learning about fish.
-</p>
-
-                
-               <div class="info-grid">
-    <div class="info-item">
-        <span class="label">Education</span>
-        
-        <span class="value">PhD Candidate, Computational Biology</span>
-        <span class="value">Brown University</span>
-
-        <span class="value" style="margin-top: 0.8rem;">B.S. Compuptational Biology '22</span>
-        <span class="value">University of Rochester</span>
-  
-            </div>
-        </section>
-        
-        <section id="projects">
-            <div class="section-header">
-                <h2>Selected Work</h2>
-                <div class="line"></div>
-            </div>
-            
-            <div class="grid">
-                <a href="https://github.com/Tu4n-ph4m/GRIDOT" class="card" target="_blank" rel="noopener">
-                  <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                  <h3>GRIDOT</h3>
-                  <p>
-Gene regulatory network inference using Optimal Transport and Graph-based Granger Causality  </p>
-                  <div class="tags">
-                    <span>Optimal Transport</span>
-                    <span>GNN</span>
-                    <span>Multi-omics</span>
-                    <span>Granger Causality</span>
-                  </div>
-                </a>
-
-                <a href="https://github.com/rsinghlab/DRIFT" class="card" target="_blank" rel="noopener">
-                  <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                  <h3>DRIFT</h3>
-                  <p>
-      Diffusion-based Representation Integration for Foundation models in spatial Transcriptomics
-                  </p>
-                  <div class="tags">
-                    <span>Foundation Models</span>
-                    <span>Spatial Omics</span>
-                  </div>
-                </a>
-                   <a href="https://github.com/rsinghlab/DRIFT" class="card" target="_blank" rel="noopener">
-                  <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                  <h3>Odor-associated Learning and Memory</h3>
-                  <p>
-            Modeling gene regulation in hypothalamus using optimal transport and neural networks
-                  </p>
-                  <div class="tags">
-                    <span>Optimal Transport</span>
-                    <span>scRNA-seq</span>
-                  </div>
-                </a>
-                <a href="https://github.com/rsinghlab/DRIFT" class="card" target="_blank" rel="noopener">
-                  <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                  <h3>BindGPS</h3>
-                  <p>
-            Modeling gene regulation in hypothalamus using optimal transport and neural networks
-                  </p>
-                  <div class="tags">
-                    <span>Optimal Transport</span>
-                    <span>scRNA-seq</span>
-                  </div>
-                </a>
-
-                
-
-                
-            </div>
-        </section>
-
-       
-
-    </main>
-
-    <footer>
-       <div class="socials">
-    <a href="https://github.com/Tu4n-ph4m" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    <a href="YOUR_GOOGLE_SCHOLAR_URL_HERE" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+            <span class="value" style="margin-top: 0.8rem;">B.S. Computational Biology '22</span>
+            <span class="value">University of Rochester</span>
+          </div>
         </div>
-        <p>&copy; 2025 Pham.</p>
-    </footer>
+      </div>
+    </section>
 
-    <div id="chat-window">
-        <div style="background: var(--accent); color: white; padding: 15px; font-weight: bold; font-size: 1.1rem;">
-            Chat Assistant
-        </div>
+    <section id="projects">
+      <!-- your projects content continues here -->
+    </section>
+  </main>
 
-        <div id="messages" class="messages"></div>
-        
-        <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Type a message...">
-            <button id="send-btn">Send</button>
-        </div>
-    </div>
-
-
-    <div id="chat-tooltip">I'm Tuan's assistant. Ask me anything!</div>
-    <button id="chat-launcher">💬</button>
-
-    <script src="script.js"></script>
-    <script src="chat.js"></script>
+  <script src="script.js"></script>
+  <script src="chat.js"></script>
 </body>
 </html>
