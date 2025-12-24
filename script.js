@@ -129,3 +129,17 @@ window.addEventListener("load", typeWriter);
 *::-webkit-scrollbar-thumb:hover {
   background-color: rgba(148, 163, 184, 0.6);
 }
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(
+    to right,
+    rgba(148, 163, 184, 0.4),
+    var(--accent)
+  );
+  z-index: 1000;
+  pointer-events: none;
+}
