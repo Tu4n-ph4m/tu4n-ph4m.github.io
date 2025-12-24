@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Enter') sendMessage();
     });
 
-    async function sendMessage() {
+   async function sendMessage() {
         const text = userInput.value.trim();
         if (!text) return;
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingId = addMessage('Thinking...', 'bot');
 
         try {
-            // Send message to YOUR Vercel server (not OpenAI directly)
+            // Send message to backend
             const response = await fetch(BACKEND_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -39,20 +39,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             
+            console.log("Server Response:", data); // Check Console if it fails!
+
             // Remove loading spinner
             removeMessage(loadingId);
 
+            // Handle different possible response formats
+            let botReply = "";
+            
             if (data.choices && data.choices[0]) {
-                // Display the answer from Gemini/Vercel
-                addMessage(data.choices[0].message.content, 'bot');
+                botReply = data.choices[0].message.content;
+            } else if (data.candidates && data.candidates[0]) { // Standard Gemini format
+                botReply = data.candidates[0].content.parts[0].text;
+            } else if (data.text) {
+                botReply = data.text;
+            } else if (data.content) {
+                botReply = data.content;
             } else {
-                addMessage("Sorry, I'm having trouble connecting.", 'bot');
+                botReply = "Received unexpected format: " + JSON.stringify(data);
             }
+
+            addMessage(botReply, 'bot');
 
         } catch (error) {
             removeMessage(loadingId);
             addMessage("Error: Server not responding.", 'bot');
-            console.error(error);
+            console.error("Fetch Error:", error);
         }
     }
 
