@@ -943,83 +943,64 @@ body::after {
 #publications a:hover {
   opacity: 0.85;
 }
-#assistant{
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%);
-  width: min(820px, calc(100vw - 32px));
-  z-index: 9999;
+/* Assistant canvas under hero */
+#assistant-canvas {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
 }
 
-#assistant-bar{
+.assistant-shell {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* Search bar */
+#assistant-bar {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
-#assistant-bar i{
-  opacity: 0.75;
+#assistant-bar i {
+  opacity: 0.7;
 }
 
-#assistant-input{
+#assistant-input {
   flex: 1;
   background: transparent;
   border: none;
   outline: none;
   color: var(--text-primary);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
-#assistant-submit{
+#assistant-bar button {
   background: var(--accent);
   border: none;
   color: white;
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 8px 14px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
 }
 
-#assistant-panel{
-  margin-top: 10px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-
-  /* collapsed by default */
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: max-height 220ms ease, opacity 220ms ease;
+/* Answer canvas */
+#assistant-panel {
+  margin-top: 1rem;
+  max-height: 260px;
+  overflow-y: auto;
 }
 
-#assistant.open #assistant-panel{
-  max-height: min(60vh, 520px);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.assistant-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  font-weight: 600;
-}
-
-#assistant-close{
-  background: transparent;
-  border: none;
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  cursor: pointer;
+/* Messages already exist — just constrain them */
+#assistant-panel .messages {
+  padding-right: 6px;
 }
