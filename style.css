@@ -884,3 +884,7 @@ body::after {
     font-size: 1.4rem;
   }
 }
+.publication-card {
+  padding: 1.25rem;
+  border-radius: 12px;
+}
