@@ -320,24 +320,35 @@ James A Kentro, Gunjan Singh,<strong>Tuan M Pham </strong> , Justin Currie, Sani
         <p>&copy; 2025 Pham.</p>
     </footer>
 
-    <div id="chat-window">
-        <div style="background: var(--accent); color: white; padding: 15px; font-weight: bold; font-size: 1.1rem;">
-            Chat Assistant
-        </div>
-
-        <div id="messages" class="messages"></div>
+        <div id="assistant">
+          <form id="assistant-bar" role="search" aria-label="Ask the assistant">
+            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
         
-        <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Type a message...">
-            <button id="send-btn">Send</button>
+            <input
+              type="text"
+              id="assistant-input"
+              placeholder="Ask about my projects, publications, or background…"
+              autocomplete="off"
+            />
+        
+            <button type="submit" id="assistant-submit">Ask</button>
+          </form>
+        
+          <div id="assistant-panel" aria-live="polite">
+            <div class="assistant-header">
+              <span>Assistant</span>
+              <button type="button" id="assistant-close" aria-label="Close">×</button>
+            </div>
+        
+            <!-- Reuse your existing messages container -->
+            <div id="messages" class="messages"></div>
+          </div>
         </div>
-    </div>
+        
+        <script src="script.js"></script>
+        <script src="chat.js"></script>
 
 
-    <div id="chat-tooltip">I'm Tuan's assistant. Ask me anything!</div>
-    <button id="chat-launcher">💬</button>
 
-    <script src="script.js"></script>
-    <script src="chat.js"></script>
 </body>
 </html>
