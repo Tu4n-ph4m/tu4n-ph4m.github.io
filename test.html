@@ -1,0 +1,22 @@
+<input id="q" placeholder="Ask a question" />
+<button onclick="ask()">Ask</button>
+
+<pre id="out"></pre>
+
+<script>
+async function ask() {
+  const question = document.getElementById("q").value;
+
+  const res = await fetch("/api/groq", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: question
+    })
+  });
+
+  const data = await res.json();
+  document.getElementById("out").textContent =
+    JSON.stringify(data, null, 2);
+}
+</script>
