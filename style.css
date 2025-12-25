@@ -888,3 +888,40 @@ body::after {
   padding: 1.25rem;
   border-radius: 12px;
 }
+/* === Publications match Project cards === */
+
+#publications .card {
+  background: var(--card-bg-hover); /* same as project hover/base */
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+}
+
+/* Author + title text */
+#publications li {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Emphasized paper titles */
+#publications em {
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+/* Your name */
+#publications strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Journal / links */
+#publications a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+#publications a:hover {
+  opacity: 0.85;
+}
