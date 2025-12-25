@@ -105,3 +105,38 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) el.remove();
     }
 });
+const assistant = document.getElementById("assistant");
+const barForm = document.getElementById("assistant-bar");
+const input = document.getElementById("assistant-input");
+const closeBtn = document.getElementById("assistant-close");
+
+// Use your existing "messages" container and your existing send logic
+// Example: a function you already have like sendMessage(text)
+function openAssistant() {
+  assistant.classList.add("open");
+}
+function closeAssistant() {
+  assistant.classList.remove("open");
+}
+
+barForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+
+  openAssistant();
+
+  // Call your existing send function here:
+  // sendMessage(text);
+  // If your existing code depends on #user-input, either refactor it to accept "text"
+  // or temporarily set that field's value and trigger the existing handler.
+
+  input.value = "";
+});
+
+closeBtn.addEventListener("click", closeAssistant);
+
+// Optional: ESC to close
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeAssistant();
+});
