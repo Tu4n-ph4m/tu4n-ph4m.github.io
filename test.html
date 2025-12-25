@@ -7,7 +7,7 @@
 async function ask() {
   const question = document.getElementById("q").value;
 
-  const res = await fetch("/api/groq", {
+  const res = await fetch("https://chat-backend-97qa.vercel.app/api/groq", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
