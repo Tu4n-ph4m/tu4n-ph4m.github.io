@@ -59,6 +59,8 @@
   <div class="assistant-shell">
     <form id="assistant-bar" role="search" aria-label="Ask the assistant">
       <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+    <i class="fas fa-network-wired assistant-icon" aria-hidden="true"></i>
+
 
       <input
         type="text"
@@ -67,7 +69,10 @@
         autocomplete="off"
       />
 
-      <button type="submit">Ask</button>
+     <button type="submit" class="assistant-submit">
+  <i class="fas fa-arrow-right"></i>
+</button>
+
     </form>
 
     <div id="assistant-panel">
@@ -356,25 +361,7 @@ James A Kentro, Gunjan Singh,<strong>Tuan M Pham </strong> , Justin Currie, Sani
         <p>&copy; 2025 Pham.</p>
     </footer>
 
-        <div id="assistant">
-          <form id="assistant-bar" role="search" aria-label="Ask the assistant">
-            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
-        
-            <input
-              type="text"
-              id="assistant-input"
-              placeholder="Ask about my projects, publications, or background…"
-              autocomplete="off"
-            />
-        
-            <button type="submit" id="assistant-submit">Ask</button>
-          </form>
-        
-          <div id="assistant-panel" aria-live="polite">
-            <div class="assistant-header">
-              <span>Assistant</span>
-              <button type="button" id="assistant-close" aria-label="Close">×</button>
-            </div>
+      
         
             <!-- Reuse your existing messages container -->
             <div id="messages" class="messages"></div>
