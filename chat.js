@@ -68,9 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     div.id = "msg-" + Date.now();
 
     const iconHtml =
-      sender === "bot"
-        ? '<div class="avatar"><i class="fas fa-robot"></i></div>'
-        : "";
+  sender === "bot"
+    ? '<div class="avatar"><i class="fas fa-network-wired"></i></div>'
+    : "";
+
 
     div.innerHTML = `
       ${iconHtml}
