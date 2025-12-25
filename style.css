@@ -891,11 +891,13 @@ body::after {
 /* === Publications match Project cards === */
 
 #publications .card {
-  background: var(--card-bg-hover); /* same as project hover/base */
-  border-radius: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
   box-shadow: var(--shadow);
-  color: var(--text-primary);
+  color: var(--text-color);
 }
+
 
 /* Author + title text */
 #publications li {
