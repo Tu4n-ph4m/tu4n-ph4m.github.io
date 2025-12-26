@@ -1135,24 +1135,48 @@ body::after {
 
 /* Floating profile */
 #floating-profile {
-  z-index: 200; /* safely above toc + indicator */
-}
-/* --- Fix: prevent floating profile from overlapping TOC bar --- */
-#floating-profile {
+  position: fixed;
   left: 3rem;
-  top: 1.25rem;
+  top: 2.5rem;          /* ⬅ moved DOWN */
   z-index: 300;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Move the TOC BELOW the floating profile */
+#floating-profile.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+/* Section navigation */
 .toc {
-  top: 7.25rem;          /* adjust this if you want more/less gap */
-  transform: none;       /* remove translateY(-50%) centering */
-  padding-top: 0;
+  position: fixed;
+  left: 3rem;
+  top: 9.25rem;        /* ⬅ moved DOWN */
+  transform: none;     /* no vertical centering */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-left: 1.25rem;
   z-index: 50;
 
-  /* optional: prevent it from running off-screen */
-  max-height: calc(100vh - 8.5rem);
+  max-height: calc(100vh - 10.5rem);
   overflow: auto;
 }
+
 
