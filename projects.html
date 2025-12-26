@@ -208,23 +208,15 @@
 
   <script src="script.js"></script>
 
-  <!-- Optional: only one project open at a time -->
-  <script>
-    document.querySelectorAll(".project").forEach(d => {
-      d.addEventListener("toggle", () => {
-        if (!d.open) return;
-        document.querySelectorAll(".project").forEach(other => {
-          if (other !== d) other.open = false;
-        });
-      });
-    });
-  </script>
+
 <script>
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = Array.from(document.querySelectorAll(".project"));
 
-  const DURATION = prefersReduced ? 0 : 2000;
-  const EASING_OPEN = "cubic-bezier(0.12, 1.15, 0.28, 1)";
+  const OPEN_DURATION  = prefersReduced ? 0 : 650;
+  const CLOSE_DURATION = prefersReduced ? 0 : 800;
+
+  const EASING_OPEN  = "cubic-bezier(0.12, 1.15, 0.28, 1)";
   const EASING_CLOSE = "cubic-bezier(0.38, 0.02, 0.62, 0.30)";
 
   function animate(detailsEl, opening) {
@@ -236,28 +228,23 @@
 
     panel.style.overflow = "hidden";
 
-    // Ensure we can measure content height reliably
-    const startHeight = opening ? 0 : panel.getBoundingClientRect().height;
-
-    // If opening, set open=true before measuring the target height
+    // If opening, set open=true before measuring target height
     if (opening) detailsEl.open = true;
 
-    // Target height is the full content height
+    const startHeight = panel.getBoundingClientRect().height;
     const endHeight = opening ? panel.scrollHeight : 0;
 
     // Set explicit start height so animation is deterministic
     panel.style.height = startHeight + "px";
-
-    // Force reflow so the browser commits start height
-    panel.getBoundingClientRect();
+    panel.getBoundingClientRect(); // force reflow
 
     panel._anim = panel.animate(
       [
-        { height: startHeight + "px", opacity: opening ? 0 : 1, transform: opening ? "translateY(-8px)" : "translateY(0)" },
-        { height: endHeight + "px", opacity: opening ? 1 : 0, transform: opening ? "translateY(0)" : "translateY(-8px)" }
+        { height: startHeight + "px", opacity: opening ? 0 : 1, transform: opening ? "translateY(-12px)" : "translateY(0)" },
+        { height: endHeight + "px",   opacity: opening ? 1 : 0, transform: opening ? "translateY(0)" : "translateY(-12px)" }
       ],
       {
-        duration: DURATION,
+        duration: opening ? OPEN_DURATION : CLOSE_DURATION,
         easing: opening ? EASING_OPEN : EASING_CLOSE,
         fill: "forwards"
       }
@@ -274,23 +261,20 @@
 
       if (!opening) detailsEl.open = false;
     };
-
-    panel._anim.oncancel = () => {
-      panel._anim = null;
-    };
   }
 
+  // Intercept summary clicks so native <details> toggle never snaps
   items.forEach(d => {
-    d.addEventListener("click", (e) => {
-      // Let links work
-      if (e.target.closest("a")) return;
+    const summary = d.querySelector("summary");
+    if (!summary) return;
 
-      // Control toggling ourselves for smoother animation
-      if (e.target.closest("summary")) e.preventDefault();
+    summary.addEventListener("click", (e) => {
+      // allow text selection, but prevent the native toggle snap
+      e.preventDefault();
 
       const opening = !d.open;
 
-      // Close others (accordion)
+      // Close others smoothly (accordion)
       items.forEach(other => {
         if (other !== d && other.open) animate(other, false);
       });
@@ -299,6 +283,7 @@
     });
   });
 </script>
+
 
 
 
