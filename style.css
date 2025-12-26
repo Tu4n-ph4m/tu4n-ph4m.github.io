@@ -1169,6 +1169,14 @@ body::after {
   pointer-events: auto;
 }
 
+#floating-profile .fp-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
 
 
 .toc {
