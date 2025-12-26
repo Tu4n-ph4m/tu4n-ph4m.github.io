@@ -1276,3 +1276,12 @@ body::after {
 }
 
 
+.pub-list em a {
+  color: var(--accent);   /* same blue used site-wide */
+  font-style: italic;
+  text-decoration: none;
+}
+
+.pub-list em a:hover {
+  text-decoration: underline;
+}
