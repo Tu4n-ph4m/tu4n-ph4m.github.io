@@ -486,12 +486,7 @@ footer {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
-.profile-img{
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 18px; /* or 50% if you want a circle */
-}
+
 body::before {
   content: "";
   position: fixed;
@@ -1067,3 +1062,5 @@ body::after {
 .hero-image::after {
   pointer-events: none;
 }
+.hero::before { z-index: 0; }
+.hero-text, .hero-image { position: relative; z-index: 1; }
