@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuan Pham | Projects</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-menu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="index.html#publications" class="nav-link">Publications</a>
+        <a href="index.html#about" class="nav-link">About</a>
+
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container fade-in page">
+    <header class="page-header">
+      <h1>Projects</h1>
+      <p class="page-subtitle">
+        Selected work across gene regulation, multimodal learning, and network inference.
+      </p>
+    </header>
+
+    <section class="grid">
+      <!-- Project 1 -->
+      <a href="https://github.com/Tu4n-ph4m/GRIDOT" class="featured-project" target="_blank" rel="noopener">
+        <div class="fp-thumb">
+          <img src="network_no_bg.png" alt="GRIDOT visualization" />
+        </div>
+        <div class="fp-content">
+          <h3 class="fp-title">GRIDOT <span class="fp-arrow">↗</span></h3>
+          <p class="fp-desc">
+            Gene regulatory network inference using Optimal Transport and Graph-based Granger Causality.
+          </p>
+          <div class="fp-tags">
+            <span>Optimal Transport</span>
+            <span>GNN</span>
+            <span>Multi-omics</span>
+            <span>Granger Causality</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="https://github.com/rsinghlab/DRIFT" class="featured-project" target="_blank" rel="noopener">
+        <div class="fp-thumb">
+          <img src="brain_no_bg.png" alt="DRIFT spatial modeling" />
+        </div>
+        <div class="fp-content">
+          <h3 class="fp-title">DRIFT <span class="fp-arrow">↗</span></h3>
+          <p class="fp-desc">
+            Diffusion-based Representation Integration for Foundation Models in Spatial Transcriptomics.
+          </p>
+          <div class="fp-tags">
+            <span>Foundation Models</span>
+            <span>Spatial Omics</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="https://github.com/rsinghlab/DRIFT" class="featured-project" target="_blank" rel="noopener">
+        <div class="fp-thumb">
+          <img src="odor.png" alt="Odor-associated learning and memory" />
+        </div>
+        <div class="fp-content">
+          <h3 class="fp-title">Odor-associated Learning &amp; Memory <span class="fp-arrow">↗</span></h3>
+          <p class="fp-desc">
+            Modeling gene regulatory mechanisms in olfactory cortex and hypothalamus under different odor conditions.
+          </p>
+          <div class="fp-tags">
+            <span>GNN</span>
+            <span>Optimal Transport</span>
+            <span>Transcriptomics</span>
+            <span>Single-cell</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="https://github.com/rsinghlab/DRIFT" class="featured-project" target="_blank" rel="noopener">
+        <div class="fp-thumb">
+          <img src="multimodal.png" alt="Synergistic TF control in Drosophila" />
+        </div>
+        <div class="fp-content">
+          <h3 class="fp-title">Synergistic TF Control in <i>Drosophila</i> <span class="fp-arrow">↗</span></h3>
+          <p class="fp-desc">
+            Multimodal modeling of <i>Drosophila</i> transcription factors involved in synapse formation and dosage compensation.
+          </p>
+          <div class="fp-tags">
+            <span>GNN</span>
+            <span>ChIP-seq</span>
+            <span>Micro-C</span>
+            <span>Multi-omics</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <footer class="page-footer">
+      <p>&copy; 2025 T Pham.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
