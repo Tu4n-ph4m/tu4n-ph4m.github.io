@@ -223,7 +223,7 @@
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = Array.from(document.querySelectorAll(".project"));
 
-  const DURATION = prefersReduced ? 0 : 360;
+  const DURATION = prefersReduced ? 0 : 500;
   const EASING_OPEN = "cubic-bezier(0.16, 1, 0.3, 1)";   // smooth “spring-ish”
   const EASING_CLOSE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
