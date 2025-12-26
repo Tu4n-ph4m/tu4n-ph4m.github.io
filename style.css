@@ -1044,7 +1044,7 @@ body::after {
   gap: 0.1rem;
   margin-top: 0.75rem;
 
-  margin-left: -1rem; /* ⬅ move left by 1rem */
+  margin-left: -2rem; /* ⬅ move left by 1rem */
 }
 
 
