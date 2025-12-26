@@ -1137,12 +1137,22 @@ body::after {
 #floating-profile {
   z-index: 200; /* safely above toc + indicator */
 }
+/* --- Fix: prevent floating profile from overlapping TOC bar --- */
 #floating-profile {
-  position: fixed;
-  left: 3rem;          /* matches .toc */
-  top: 1rem;           /* anchors near top instead of center */
+  left: 3rem;
+  top: 1.25rem;
+  z-index: 300;
 }
+
+/* Move the TOC BELOW the floating profile */
 .toc {
-  padding-top: 4rem; /* creates breathing room under floating profile */
+  top: 7.25rem;          /* adjust this if you want more/less gap */
+  transform: none;       /* remove translateY(-50%) centering */
+  padding-top: 0;
+  z-index: 50;
+
+  /* optional: prevent it from running off-screen */
+  max-height: calc(100vh - 8.5rem);
+  overflow: auto;
 }
 
