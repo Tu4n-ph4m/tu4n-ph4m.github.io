@@ -806,6 +806,11 @@ body::after {
   box-shadow: 0 14px 40px rgba(0,0,0,0.25);
 }
 
+.featured-project {
+  margin-bottom: 2.5rem; /* increase this if you want more air */
+}
+
+
 /* Thumbnail */
 .fp-thumb {
   flex: 0 0 220px;
@@ -1100,10 +1105,12 @@ body::after {
 #floating-profile .fp-name {
   font-weight: 800;
   letter-spacing: -0.6px;
-  font-size: 1.35rem;   /* closer to hero h1 scale */
-  color: var(--text-color);
+  font-size: 1.35rem;
   line-height: 1.1;
+
+  color: var(--accent); /* ← BLUE */
 }
+
 
 
 #floating-profile .fp-socials {
@@ -1133,29 +1140,37 @@ body::after {
   z-index: 50;
 }
 
-/* Floating profile */
+/* Floating profile — match featured project card */
 #floating-profile {
   position: fixed;
   left: 3rem;
-  top: 10rem;          /* ⬅ moved DOWN */
+  top: 10rem;
   z-index: 300;
 
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 
-  padding: 1rem 1.25rem;
+  padding: 1.6rem;
   border-radius: 18px;
 
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(12px);
+  /* SAME surface treatment as featured-project */
+  background:
+    radial-gradient(circle at 12% 20%, rgba(56,189,248,0.10), transparent 45%),
+    radial-gradient(circle at 88% 80%, rgba(34,197,94,0.08), transparent 45%),
+    var(--card-bg);
+
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
 
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 #floating-profile.show {
@@ -1163,7 +1178,7 @@ body::after {
   transform: translateY(0);
   pointer-events: auto;
 }
-/* Section navigation */
+
 .toc {
   position: fixed;
   left: 3rem;
