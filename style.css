@@ -1104,19 +1104,17 @@ body::after {
 
 #floating-profile .fp-name {
   font-weight: 800;
-  letter-spacing: -0.6px;
-  font-size: 1.35rem;
-  line-height: 1.1;
+  font-size: 2.5rem;     /* SAME as hero h1 */
+  line-height: 1.2;      /* SAME as hero h1 */
+  letter-spacing: -1px;  /* SAME as hero h1 */
 
-  color: var(--accent); /* ← BLUE */
+  color: var(--accent);  /* blue */
 }
 
 
 
-#floating-profile .fp-socials {
-  display: flex;
-  gap: 1rem;
-}
+
+
 
 #floating-profile .fp-socials a {
   font-size: 1.2rem;    /* matches hero-socials */
@@ -1141,6 +1139,7 @@ body::after {
 }
 
 /* Floating profile — match featured project card */
+/* Floating profile — text-only (no box) */
 #floating-profile {
   position: fixed;
   left: 3rem;
@@ -1151,26 +1150,17 @@ body::after {
   flex-direction: column;
   gap: 0.5rem;
 
-  padding: 1.6rem;
-  border-radius: 18px;
-
-  /* SAME surface treatment as featured-project */
-  background:
-    radial-gradient(circle at 12% 20%, rgba(56,189,248,0.10), transparent 45%),
-    radial-gradient(circle at 88% 80%, rgba(34,197,94,0.08), transparent 45%),
-    var(--card-bg);
-
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  /* REMOVE card styling */
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 #floating-profile.show {
@@ -1179,10 +1169,12 @@ body::after {
   pointer-events: auto;
 }
 
+
+
 .toc {
   position: fixed;
   left: 3rem;
-  top: 15.25rem;        /* ⬅ moved DOWN */
+  top: 17.25rem;        /* ⬅ moved DOWN */
   transform: none;     /* no vertical centering */
   display: flex;
   flex-direction: column;
