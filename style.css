@@ -1064,3 +1064,62 @@ body::after {
 }
 .hero::before { z-index: 0; }
 .hero-text, .hero-image { position: relative; z-index: 1; }
+/* Floating profile above the section navigator */
+#floating-profile {
+  position: fixed;
+  left: 3rem;          /* match .toc left */
+  top: 1.25rem;        /* sits above the navigator */
+  z-index: 200;        /* above toc and other overlays */
+
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#floating-profile.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#floating-profile .fp-name {
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 0.35rem;
+}
+
+#floating-profile .fp-socials {
+  display: flex;
+  gap: 0.8rem;
+}
+
+#floating-profile .fp-socials a {
+  opacity: 0.85;
+  transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+
+#floating-profile .fp-socials a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  color: var(--accent);
+}
+
+/* Avoid clutter on small screens */
+@media (max-width: 600px) {
+  #floating-profile { display: none; }
+}
