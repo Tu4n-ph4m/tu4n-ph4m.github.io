@@ -1048,8 +1048,8 @@ body::after {
   align-items: center;
   justify-content: center;
 
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
 
   transition:
@@ -1229,4 +1229,19 @@ body::after {
   overflow: auto;
 }
 
+#publications .more-projects {
+  margin-top: 2.5rem;
+}
+
+#publications .more-projects-link,
+#publications .full-link {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#publications .more-projects-link:hover,
+#publications .full-link:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
 
