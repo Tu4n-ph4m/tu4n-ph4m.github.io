@@ -1123,9 +1123,26 @@ body::after {
   color: var(--accent);
 }
 
-#floating-profile { z-index: 200; }
 
 /* Avoid clutter on small screens */
 @media (max-width: 600px) {
   #floating-profile { display: none; }
 }
+/* TOC indicator */
+.toc-indicator {
+  z-index: 50;
+}
+
+/* Floating profile */
+#floating-profile {
+  z-index: 200; /* safely above toc + indicator */
+}
+#floating-profile {
+  position: fixed;
+  left: 3rem;          /* matches .toc */
+  top: 1rem;           /* anchors near top instead of center */
+}
+.toc {
+  padding-top: 4rem; /* creates breathing room under floating profile */
+}
+
