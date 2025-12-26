@@ -220,56 +220,86 @@
     });
   </script>
 <script>
-  const projects = Array.from(document.querySelectorAll(".project"));
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = Array.from(document.querySelectorAll(".project"));
 
-  function animatePanel(detailsEl, opening) {
+  const DURATION = prefersReduced ? 0 : 360;
+  const EASING_OPEN = "cubic-bezier(0.16, 1, 0.3, 1)";   // smooth “spring-ish”
+  const EASING_CLOSE = "cubic-bezier(0.4, 0, 0.2, 1)";
+
+  function animate(detailsEl, opening) {
     const panel = detailsEl.querySelector(".project-panel");
     if (!panel) return;
 
+    // Cancel any in-flight animation
+    if (panel._anim) panel._anim.cancel();
+
     panel.style.overflow = "hidden";
 
-    const start = opening ? 0 : panel.scrollHeight;
-    const end = opening ? panel.scrollHeight : 0;
+    // Ensure we can measure content height reliably
+    const startHeight = opening ? 0 : panel.getBoundingClientRect().height;
 
-    panel.animate(
+    // If opening, set open=true before measuring the target height
+    if (opening) detailsEl.open = true;
+
+    // Target height is the full content height
+    const endHeight = opening ? panel.scrollHeight : 0;
+
+    // Set explicit start height so animation is deterministic
+    panel.style.height = startHeight + "px";
+
+    // Force reflow so the browser commits start height
+    panel.getBoundingClientRect();
+
+    panel._anim = panel.animate(
       [
-        { maxHeight: start + "px", opacity: opening ? 0 : 1, transform: opening ? "translateY(-6px)" : "translateY(0)" },
-        { maxHeight: end + "px", opacity: opening ? 1 : 0, transform: opening ? "translateY(0)" : "translateY(-6px)" }
+        { height: startHeight + "px", opacity: opening ? 0 : 1, transform: opening ? "translateY(-8px)" : "translateY(0)" },
+        { height: endHeight + "px", opacity: opening ? 1 : 0, transform: opening ? "translateY(0)" : "translateY(-8px)" }
       ],
-      { duration: 260, easing: "ease-out" }
-    ).onfinish = () => {
-      if (!opening) detailsEl.open = false;
-      panel.style.maxHeight = "";
+      {
+        duration: DURATION,
+        easing: opening ? EASING_OPEN : EASING_CLOSE,
+        fill: "forwards"
+      }
+    );
+
+    panel._anim.onfinish = () => {
+      panel._anim = null;
+
+      // Clean up inline styles so layout remains responsive
+      panel.style.overflow = "";
       panel.style.opacity = "";
       panel.style.transform = "";
-      panel.style.overflow = "";
+      panel.style.height = "";
+
+      if (!opening) detailsEl.open = false;
+    };
+
+    panel._anim.oncancel = () => {
+      panel._anim = null;
     };
   }
 
-  projects.forEach(d => {
+  items.forEach(d => {
     d.addEventListener("click", (e) => {
-      // Let links inside the panel work normally
+      // Let links work
       if (e.target.closest("a")) return;
 
-      // Prevent native toggle; we’ll control it
+      // Control toggling ourselves for smoother animation
       if (e.target.closest("summary")) e.preventDefault();
 
       const opening = !d.open;
 
-      // Close others (accordion behavior)
-      projects.forEach(other => {
-        if (other !== d && other.open) animatePanel(other, false);
+      // Close others (accordion)
+      items.forEach(other => {
+        if (other !== d && other.open) animate(other, false);
       });
 
-      if (opening) {
-        d.open = true;
-        animatePanel(d, true);
-      } else {
-        animatePanel(d, false);
-      }
+      animate(d, opening);
     });
   });
 </script>
+
 
 
   
