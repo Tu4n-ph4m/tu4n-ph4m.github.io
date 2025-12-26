@@ -1137,7 +1137,7 @@ body::after {
 #floating-profile {
   position: fixed;
   left: 3rem;
-  top: 2.5rem;          /* ⬅ moved DOWN */
+  top: 10rem;          /* ⬅ moved DOWN */
   z-index: 300;
 
   display: flex;
@@ -1167,7 +1167,7 @@ body::after {
 .toc {
   position: fixed;
   left: 3rem;
-  top: 9.25rem;        /* ⬅ moved DOWN */
+  top: 30.25rem;        /* ⬅ moved DOWN */
   transform: none;     /* no vertical centering */
   display: flex;
   flex-direction: column;
