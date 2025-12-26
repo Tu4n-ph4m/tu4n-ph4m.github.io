@@ -132,3 +132,15 @@
   background: rgba(255,255,255,0.09);
   border-color: rgba(255,255,255,0.14);
 }
+/* Prevent layout shift / popping during animation */
+.project-panel{
+  will-change: height, opacity, transform;
+}
+
+/* Make the card interaction feel less “clicky” and more “polished” */
+.project-card{
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.project[open] .project-card{
+  transform: translateY(-1px);
+}
