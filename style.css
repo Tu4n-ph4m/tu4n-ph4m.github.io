@@ -1146,7 +1146,8 @@ body::after {
 
 
 #floating-profile .fp-socials a {
-  font-size: 1.2rem;    /* matches hero-socials */
+  color: #ffffff !important;
+  font-size: 1.2rem;   
   opacity: 0.85;
   transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
 }
