@@ -1,97 +1,134 @@
-/* projects.css — scoped to projects.html by inclusion order */
+/* projects.css */
 
-/* Layout: convert the grid into a vertical list for better reading */
-.grid{
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-/* Card: slightly denser, more “paper list” */
-.featured-project{
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  padding: 1.25rem;
+@media (max-width: 900px){
+  .projects-grid{ grid-template-columns: 1fr; }
+}
+
+/* Remove default marker */
+.project > summary{
+  list-style: none;
+}
+.project > summary::-webkit-details-marker{
+  display: none;
+}
+
+/* Card (collapsed state) */
+.project-card{
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 0.9rem;
+  align-items: start;
+
+  padding: 1rem;
   border-radius: 14px;
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  cursor: pointer;
+  user-select: none;
 }
 
-.featured-project:hover{
+.project-card:hover{
   background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.10);
-  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.12);
 }
 
-/* Thumbnail: reduce dominance and keep consistent */
-.fp-thumb{
-  flex: 0 0 120px;
-}
-
-.fp-thumb img{
-  width: 120px;
-  height: 90px;
+.pc-thumb img{
+  width: 88px;
+  height: 64px;
   object-fit: contain;
   border-radius: 10px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-/* Text hierarchy */
-.fp-content{
-  flex: 1;
-  min-width: 0;
-}
-
-.fp-title{
-  font-size: 1.05rem;
+.pc-title{
+  margin: 0;
+  font-size: 1.02rem;
   font-weight: 650;
-  margin: 0 0 0.35rem 0;
-  letter-spacing: 0.2px;
 }
 
-.fp-arrow{
-  opacity: 0.65;
-  margin-left: 0.25rem;
+.pc-subtitle{
+  margin: 0.25rem 0 0.55rem 0;
+  font-size: 0.86rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.35;
 }
 
-.fp-desc{
-  margin: 0 0 0.75rem 0;
-  font-size: 0.92rem;
-  line-height: 1.45;
-  color: rgba(255,255,255,0.78);
-  max-width: 72ch;
-}
-
-/* Tags: quieter */
-.fp-tags{
+.pc-tags{
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-
-.fp-tags span{
+.pc-tags span{
   font-size: 0.72rem;
-  padding: 0.28rem 0.55rem;
+  padding: 0.22rem 0.5rem;
   border-radius: 999px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.08);
   color: rgba(255,255,255,0.72);
 }
 
-/* Mobile */
-@media (max-width: 720px){
-  .featured-project{
-    flex-direction: column;
-  }
+.pc-chev{
+  opacity: 0.65;
+  margin-top: 0.15rem;
+  transition: transform 0.18s ease;
+}
 
-  .fp-thumb{
-    flex-basis: auto;
-  }
+/* Expanded state */
+.project[open] .project-card{
+  border-color: rgba(255,255,255,0.16);
+}
+.project[open] .pc-chev{
+  transform: rotate(180deg);
+}
 
-  .fp-thumb img{
-    width: 100%;
-    height: 140px;
-  }
+/* Panel */
+.project-panel{
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.pp-desc{
+  margin: 0 0 0.85rem 0;
+  color: rgba(255,255,255,0.80);
+  line-height: 1.5;
+}
+
+.pp-bullets{
+  margin: 0 0 0.9rem 1.1rem;
+  color: rgba(255,255,255,0.75);
+}
+.pp-bullets li{
+  margin: 0.35rem 0;
+}
+
+.pp-links{
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pp-btn{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.85);
+}
+
+.pp-btn:hover{
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.14);
 }
