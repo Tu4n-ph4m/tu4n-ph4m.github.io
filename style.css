@@ -943,6 +943,12 @@ body::after {
 #publications a:hover {
   opacity: 0.85;
 }
+
+#publications .more-projects-link {
+  color: #ffffff !important;
+}
+
+
 /* Assistant canvas under hero */
 #assistant-canvas {
   margin-top: 3rem;
