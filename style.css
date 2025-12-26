@@ -1031,10 +1031,12 @@ body::after {
   text-align: left;
 }
 .hero-socials {
-  margin-top: 0.6rem;
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+
+  gap: 0.4rem;          /* balanced spacing */
+  margin-top: 0.75rem; /* optical balance under image */
 }
 
 /* --- Smooth Hero Socials --- */
@@ -1198,8 +1200,10 @@ body::after {
 }
 
 #floating-profile .fp-socials {
-  gap: 5rem;
+  display: flex;
+  gap: 2.25rem;  /* wider, but controlled */
 }
+
 
 
 
