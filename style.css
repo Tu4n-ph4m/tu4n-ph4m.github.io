@@ -1035,8 +1035,8 @@ body::after {
   justify-content: center;
   align-items: center;
 
-  gap: 0.4rem;          /* balanced spacing */
-  margin-top: 0.75rem; /* optical balance under image */
+  gap: 0.2rem;          
+  margin-top: 0.75rem; 
 }
 
 /* --- Smooth Hero Socials --- */
@@ -1201,7 +1201,7 @@ body::after {
 
 #floating-profile .fp-socials {
   display: flex;
-  gap: 2.25rem;  /* wider, but controlled */
+  gap: 1rem;  /* wider, but controlled */
 }
 
 
