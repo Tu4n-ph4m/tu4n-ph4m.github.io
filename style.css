@@ -1065,28 +1065,30 @@ body::after {
 .hero::before { z-index: 0; }
 .hero-text, .hero-image { position: relative; z-index: 1; }
 /* Floating profile above the section navigator */
+/* Floating profile above the section navigator */
 #floating-profile {
   position: fixed;
-  left: 3rem;          /* match .toc left */
-  top: 1.25rem;        /* sits above the navigator */
-  z-index: 200;        /* above toc and other overlays */
+  left: 3rem;            /* aligned with toc */
+  top: 1.25rem;
+  z-index: 300;          /* ABOVE section navigation */
 
   display: flex;
-  align-items: center;
-  gap: 0.9rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 
-  padding: 0.75rem 0.9rem;
-  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
 
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.10);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
 
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   pointer-events: none;
 
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 #floating-profile.show {
@@ -1096,28 +1098,32 @@ body::after {
 }
 
 #floating-profile .fp-name {
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  font-size: 1.35rem;   /* closer to hero h1 scale */
   color: var(--text-color);
-  margin-bottom: 0.35rem;
+  line-height: 1.1;
 }
+
 
 #floating-profile .fp-socials {
   display: flex;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 #floating-profile .fp-socials a {
+  font-size: 1.2rem;    /* matches hero-socials */
   opacity: 0.85;
   transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
 }
 
 #floating-profile .fp-socials a:hover {
   opacity: 1;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   color: var(--accent);
 }
+
+#floating-profile { z-index: 200; }
 
 /* Avoid clutter on small screens */
 @media (max-width: 600px) {
