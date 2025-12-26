@@ -1023,3 +1023,10 @@ body::after {
   border-radius: 10px;
   cursor: pointer;
 }
+.assistant-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin: 0.4rem 0 0.6rem;
+  text-align: left;
+}
