@@ -1048,10 +1048,6 @@ body::after {
   align-items: center;
   justify-content: center;
 
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-
   transition:
     transform 0.2s ease,
     opacity 0.2s ease,
@@ -1229,19 +1225,44 @@ body::after {
   overflow: auto;
 }
 
-#publications .more-projects {
-  margin-top: 2.5rem;
+/* --- More Projects link --- */
+.more-projects {
+    margin-top: 2.5rem; /* increase spacing from cards */
+    text-align: center;
 }
 
-#publications .more-projects-link,
-#publications .full-link {
-  color: #ffffff;
-  font-weight: 700;
+.more-projects-link {
+    font-weight: 700;              /* bold by default */
+    color: #ffffff;                /* white */
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    position: relative;
+    transition: 
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
 
-#publications .more-projects-link:hover,
-#publications .full-link:hover {
-  opacity: 0.85;
-  text-decoration: underline;
+/* underline effect */
+.more-projects-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
 }
+
+.more-projects-link:hover {
+    transform: translateX(4px);    /* subtle motion like Full List */
+    opacity: 0.9;
+}
+
+.more-projects-link:hover::after {
+    transform: scaleX(1);
+}
+
 
