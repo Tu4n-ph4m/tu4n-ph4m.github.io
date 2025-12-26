@@ -1037,16 +1037,35 @@ body::after {
   gap: 1rem;
 }
 
+/* --- Smooth Hero Socials --- */
 .hero-socials a {
-  font-size: 1.1rem;
-  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .hero-socials a:hover {
+  transform: translateY(-2px) scale(1.05);
   opacity: 1;
   color: var(--accent);
+  background-color: rgba(148, 163, 184, 0.12); /* subtle hover halo */
 }
-/* Ensure hero socials are above any hero overlays */
+
+.hero-socials a:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
 .hero-image {
   position: relative;
 }
@@ -1175,6 +1194,11 @@ body::after {
   justify-content: center;
   width: 36px;
   height: 36px;
+
+}
+
+#floating-profile .fp-socials {
+  gap: 1.5rem;
 }
 
 
