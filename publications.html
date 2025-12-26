@@ -31,16 +31,16 @@
   <main class="container fade-in page">
     <header class="page-header">
       <h1>Publications</h1>
-     
     </header>
 
-   
+    <!-- ========================= -->
+    <!-- Batch 1: Preprints -->
+    <!-- ========================= -->
     <section class="pub-batch" aria-label="Preprints">
       <h2 class="pub-batch-title">Preprints</h2>
 
       <section class="pub-list" id="preprintList" aria-label="Preprints list">
-        <!-- No preprints provided yet -->
-        <div class="pub-empty" data-type="preprint" style="opacity: 0.85;">
+        <div class="pub-empty pub-item" data-type="preprint" data-tags="preprint" style="opacity: 0.85;">
           No preprints listed yet.
         </div>
       </section>
@@ -60,23 +60,19 @@
             <div class="pub-badge">Journal</div>
 
             <div class="pub-meta">
-              <h2 class="pub-title">
-                SCOT+: A Comprehensive Software Suite for Single-Cell Alignment Using Optimal Transport
-              </h2>
+              <div class="pub-header-row">
+                <span class="pub-title-inline">
+                  SCOT+: A Comprehensive Software Suite for Single-Cell Alignment Using Optimal Transport
+                </span>
+                <span class="pub-venue-inline">Bioinformatics Advances · 2025</span>
+                <a class="pub-doi-inline" href="https://doi.org/10.1093/bioadv/vbaf314" target="_blank" rel="noopener">DOI</a>
+              </div>
 
               <div class="pub-authors">
                 C. D. Baker, <b>T. M. Pham</b>, P. Demetci, Q.-H. Tran, I. Redko, B. Sandstede, and R. Singh
               </div>
-
-              <div class="pub-venue">Bioinformatics Advances · 2025</div>
-            </div>
-
-            <div class="pub-actions" aria-label="Links">
-              <a class="pub-btn" href="https://doi.org/10.1093/bioadv/vbaf314" target="_blank" rel="noopener">DOI</a>
             </div>
           </div>
-
-         
         </article>
 
         <!-- Publication 2 -->
@@ -85,23 +81,19 @@
             <div class="pub-badge">Journal</div>
 
             <div class="pub-meta">
-              <h2 class="pub-title">
-                Single-cell genomics of the mouse olfactory cortex reveals contrasts with neocortex and ancestral signatures of cell type evolution
-              </h2>
+              <div class="pub-header-row">
+                <span class="pub-title-inline">
+                  Single-cell genomics of the mouse olfactory cortex reveals contrasts with neocortex and ancestral signatures of cell type evolution
+                </span>
+                <span class="pub-venue-inline">Nature Neuroscience · 2025</span>
+                <a class="pub-doi-inline" href="https://doi.org/10.1038/s41593-025-01924-3" target="_blank" rel="noopener">DOI</a>
+              </div>
 
               <div class="pub-authors">
                 S. Zeppilli, A. O. Gurrola, P. Demetci, D. H. Brann, <b>T. M. Pham</b>, R. Attey, N. Zilkha, et al.
               </div>
-
-              <div class="pub-venue">Nature Neuroscience · 2025</div>
-            </div>
-
-            <div class="pub-actions" aria-label="Links">
-              <a class="pub-btn" href="https://doi.org/10.1038/s41593-025-01924-3" target="_blank" rel="noopener">DOI</a>
             </div>
           </div>
-
-         
         </article>
 
         <!-- Publication 3 -->
@@ -110,24 +102,20 @@
             <div class="pub-badge">Journal</div>
 
             <div class="pub-meta">
-              <h2 class="pub-title">
-                DNA Structure Design Is Improved Using an Artificially Expanded Alphabet of Base Pairs Including Loop and Mismatch Thermodynamic Parameters
-              </h2>
+              <div class="pub-header-row">
+                <span class="pub-title-inline">
+                  DNA Structure Design Is Improved Using an Artificially Expanded Alphabet of Base Pairs Including Loop and Mismatch Thermodynamic Parameters
+                </span>
+                <span class="pub-venue-inline">ACS Synthetic Biology · 2023</span>
+                <a class="pub-doi-inline" href="https://doi.org/10.1021/acssynbio.3c00358" target="_blank" rel="noopener">DOI</a>
+              </div>
 
               <div class="pub-authors">
                 <b>T. M. Pham</b>, T. Miffin, H. Sun, K. K. Sharp, X. Wang, M. Zhu, S. Hoshika, R. J. Peterson,
                 S. A. Benner, J. D. Kahn, and D. H. Mathews
               </div>
-
-              <div class="pub-venue">ACS Synthetic Biology · 2023</div>
-            </div>
-
-            <div class="pub-actions" aria-label="Links">
-              <a class="pub-btn" href="https://doi.org/10.1021/acssynbio.3c00358" target="_blank" rel="noopener">DOI</a>
             </div>
           </div>
-
-        
         </article>
 
       </section>
@@ -139,60 +127,5 @@
   </main>
 
   <script src="script.js"></script>
-
-  <!-- Unified filtering/search across BOTH sections -->
-  <script>
-    const searchInput = document.getElementById("pubSearch");
-    const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
-
-    // Includes pub items + the empty placeholder (so it can hide when filtering/searching)
-    const allEntries = Array.from(document.querySelectorAll(".pub-item, .pub-empty"));
-
-    let activeFilter = "all";
-
-    function setAriaActive(btn) {
-      filterBtns.forEach(b => b.setAttribute("aria-selected", "false"));
-      btn.setAttribute("aria-selected", "true");
-    }
-
-    function apply() {
-      const q = (searchInput.value || "").trim().toLowerCase();
-
-      allEntries.forEach(el => {
-        const type = el.getAttribute("data-type") || "";
-        const tags = (el.getAttribute("data-tags") || "").toLowerCase();
-        const text = (el.innerText || "").toLowerCase();
-
-        const matchFilter = (activeFilter === "all") || (type === activeFilter);
-        const matchQuery = (!q) || text.includes(q) || tags.includes(q);
-
-        el.style.display = (matchFilter && matchQuery) ? "" : "none";
-      });
-
-      // If user filters to preprint and no preprints exist, show the placeholder
-      const preprintPlaceholder = document.querySelector(".pub-empty[data-type='preprint']");
-      if (preprintPlaceholder) {
-        const anyVisiblePreprint = Array.from(document.querySelectorAll(".pub-item[data-type='preprint']"))
-          .some(x => x.style.display !== "none");
-        const wantPreprints = (activeFilter === "all" || activeFilter === "preprint");
-        const queryAllows = !q || preprintPlaceholder.innerText.toLowerCase().includes(q);
-
-        preprintPlaceholder.style.display = (wantPreprints && !anyVisiblePreprint && queryAllows) ? "" : "none";
-      }
-    }
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        filterBtns.forEach(b => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-        setAriaActive(btn);
-
-        activeFilter = btn.getAttribute("data-filter") || "all";
-        apply();
-      });
-    });
-
-    searchInput.addEventListener("input", apply);
-  </script>
 </body>
 </html>
