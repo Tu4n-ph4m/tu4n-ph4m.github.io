@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tuan Pham | Publications</title>
 
-  <!-- Global styles -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Publications-only overrides -->
   <link rel="stylesheet" href="publications.css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -15,7 +13,6 @@
 </head>
 
 <body>
-  <!-- Top Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-menu">
@@ -35,7 +32,7 @@
     <header class="page-header">
       <h1>Publications</h1>
       <p class="page-subtitle">
-        Peer-reviewed papers across single-cell alignment, neurogenomics, and nucleic-acid design.
+        Selected work across single-cell alignment, neurogenomics, and nucleic-acid design.
       </p>
     </header>
 
@@ -54,113 +51,141 @@
       </div>
     </section>
 
-    <!-- Publications list -->
-    <section class="pub-list" id="pubList" aria-label="Publications list">
+    <!-- ========================= -->
+    <!-- Batch 1: Preprints -->
+    <!-- ========================= -->
+    <section class="pub-batch" aria-label="Preprints">
+      <h2 class="pub-batch-title">Preprints</h2>
 
-      <!-- Publication 1 -->
-      <article class="pub-item" data-type="journal" data-tags="single-cell alignment optimal transport scot+ software suite">
-        <div class="pub-top">
-          <div class="pub-badge">Journal</div>
-
-          <div class="pub-meta">
-            <h2 class="pub-title">SCOT+: A Comprehensive Software Suite for Single-Cell Alignment Using Optimal Transport</h2>
-            <div class="pub-authors">
-              Colin D. Baker, <b>Tuan M. Pham</b>, Pinar Demetci, Quang-Huy Tran, Ievgen Redko, Bjorn Sandstede, and Ritambhara Singh
-            </div>
-            <div class="pub-venue">Bioinformatics Advances · 2025</div>
-          </div>
-
-          <div class="pub-actions" aria-label="Links">
-            <a class="pub-btn" href="https://doi.org/10.1093/bioadv/vbaf314" target="_blank" rel="noopener">DOI</a>
-          </div>
+      <section class="pub-list" id="preprintList" aria-label="Preprints list">
+        <!-- No preprints provided yet -->
+        <div class="pub-empty" data-type="preprint" style="opacity: 0.85;">
+          No preprints listed yet.
         </div>
+      </section>
+    </section>
 
-        <details class="pub-details">
-          <summary class="pub-summary">Abstract &amp; details</summary>
-          <div class="pub-panel">
-            <p>
-              A comprehensive software suite for single-cell alignment using optimal transport, designed to support
-              practical end-to-end workflows and robust benchmarking across common single-cell integration settings.
-            </p>
-            <ul class="pub-bullets">
-              <li><b>Venue:</b> Bioinformatics Advances (2025)</li>
-              <li><b>Keywords:</b> optimal transport, single-cell alignment, integration, software</li>
-            </ul>
-          </div>
-        </details>
-      </article>
+    <!-- ========================= -->
+    <!-- Batch 2: Publications -->
+    <!-- ========================= -->
+    <section class="pub-batch" aria-label="Publications">
+      <h2 class="pub-batch-title">Publications</h2>
 
-      <!-- Publication 2 -->
-      <article class="pub-item" data-type="journal" data-tags="single-cell genomics olfactory cortex neocortex evolution nature neuroscience">
-        <div class="pub-top">
-          <div class="pub-badge">Journal</div>
+      <section class="pub-list" id="pubList" aria-label="Publications list">
 
-          <div class="pub-meta">
-            <h2 class="pub-title">
-              Single-cell genomics of the mouse olfactory cortex reveals contrasts with neocortex and ancestral signatures of cell type evolution
-            </h2>
-            <div class="pub-authors">
-              Sara Zeppilli, Alonso O. Gurrola, Pinar Demetci, David H. Brann, <b>Tuan M. Pham</b>, Robin Attey, Noga Zilkha, et al.
+        <!-- Publication 1 -->
+        <article class="pub-item" data-type="journal" data-tags="single-cell alignment optimal transport scot+ software suite bioinformatics advances">
+          <div class="pub-top">
+            <div class="pub-badge">Journal</div>
+
+            <div class="pub-meta">
+              <h2 class="pub-title">
+                SCOT+: A Comprehensive Software Suite for Single-Cell Alignment Using Optimal Transport
+              </h2>
+
+              <div class="pub-authors">
+                C. D. Baker, <b>T. M. Pham</b>, P. Demetci, Q.-H. Tran, I. Redko, B. Sandstede, and R. Singh
+              </div>
+
+              <div class="pub-venue">Bioinformatics Advances · 2025</div>
             </div>
-            <div class="pub-venue">Nature Neuroscience · 2025</div>
-          </div>
 
-          <div class="pub-actions" aria-label="Links">
-            <a class="pub-btn" href="https://doi.org/10.1038/s41593-025-01924-3" target="_blank" rel="noopener">DOI</a>
-          </div>
-        </div>
-
-        <details class="pub-details">
-          <summary class="pub-summary">Abstract &amp; details</summary>
-          <div class="pub-panel">
-            <p>
-              Single-cell genomics of the mouse olfactory cortex, highlighting contrasts with neocortex and
-              identifying ancestral signatures associated with cell type evolution.
-            </p>
-            <ul class="pub-bullets">
-              <li><b>Venue:</b> Nature Neuroscience (2025)</li>
-              <li><b>Keywords:</b> single-cell genomics, cortical cell types, evolution, olfactory cortex</li>
-            </ul>
-          </div>
-        </details>
-      </article>
-
-      <!-- Publication 3 -->
-      <article class="pub-item" data-type="journal" data-tags="dna structure design expanded alphabet thermodynamics loop mismatch acs synthetic biology">
-        <div class="pub-top">
-          <div class="pub-badge">Journal</div>
-
-          <div class="pub-meta">
-            <h2 class="pub-title">
-              DNA Structure Design Is Improved Using an Artificially Expanded Alphabet of Base Pairs Including Loop and Mismatch Thermodynamic Parameters
-            </h2>
-            <div class="pub-authors">
-              <b>Pham, Tuan M.</b>, Terrel Miffin, Hongying Sun, Kenneth K. Sharp, Xiaoyu Wang, Mingyi Zhu, Shuichi Hoshika,
-              Raymond J. Peterson, Steven A. Benner, Jason D. Kahn, and David H. Mathews
+            <div class="pub-actions" aria-label="Links">
+              <a class="pub-btn" href="https://doi.org/10.1093/bioadv/vbaf314" target="_blank" rel="noopener">DOI</a>
             </div>
-            <div class="pub-venue">ACS Synthetic Biology · 2023</div>
           </div>
 
-          <div class="pub-actions" aria-label="Links">
-            <a class="pub-btn" href="https://doi.org/10.1021/acssynbio.3c00358" target="_blank" rel="noopener">DOI</a>
-          </div>
-        </div>
+          <details class="pub-details">
+            <summary class="pub-summary">Abstract &amp; details</summary>
+            <div class="pub-panel">
+              <p>
+                A comprehensive software suite for single-cell alignment using optimal transport, designed to support
+                practical end-to-end workflows and robust benchmarking across common single-cell integration settings.
+              </p>
+              <ul class="pub-bullets">
+                <li><b>Venue:</b> Bioinformatics Advances (2025)</li>
+                <li><b>Keywords:</b> optimal transport, single-cell alignment, integration, software</li>
+              </ul>
+            </div>
+          </details>
+        </article>
 
-        <details class="pub-details">
-          <summary class="pub-summary">Abstract &amp; details</summary>
-          <div class="pub-panel">
-            <p>
-              DNA structure design is improved using an artificially expanded alphabet of base pairs, incorporating
-              loop and mismatch thermodynamic parameters to increase design fidelity and predictive performance.
-            </p>
-            <ul class="pub-bullets">
-              <li><b>Venue:</b> ACS Synthetic Biology (2023)</li>
-              <li><b>Keywords:</b> DNA design, expanded base pairs, thermodynamics, loops, mismatches</li>
-            </ul>
-          </div>
-        </details>
-      </article>
+        <!-- Publication 2 -->
+        <article class="pub-item" data-type="journal" data-tags="single-cell genomics olfactory cortex neocortex evolution nature neuroscience">
+          <div class="pub-top">
+            <div class="pub-badge">Journal</div>
 
+            <div class="pub-meta">
+              <h2 class="pub-title">
+                Single-cell genomics of the mouse olfactory cortex reveals contrasts with neocortex and ancestral signatures of cell type evolution
+              </h2>
+
+              <div class="pub-authors">
+                S. Zeppilli, A. O. Gurrola, P. Demetci, D. H. Brann, <b>T. M. Pham</b>, R. Attey, N. Zilkha, et al.
+              </div>
+
+              <div class="pub-venue">Nature Neuroscience · 2025</div>
+            </div>
+
+            <div class="pub-actions" aria-label="Links">
+              <a class="pub-btn" href="https://doi.org/10.1038/s41593-025-01924-3" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+
+          <details class="pub-details">
+            <summary class="pub-summary">Abstract &amp; details</summary>
+            <div class="pub-panel">
+              <p>
+                Single-cell genomics of the mouse olfactory cortex, highlighting contrasts with neocortex and
+                identifying ancestral signatures associated with cell type evolution.
+              </p>
+              <ul class="pub-bullets">
+                <li><b>Venue:</b> Nature Neuroscience (2025)</li>
+                <li><b>Keywords:</b> single-cell genomics, cortical cell types, evolution, olfactory cortex</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- Publication 3 -->
+        <article class="pub-item" data-type="journal" data-tags="dna structure design expanded alphabet thermodynamics loop mismatch acs synthetic biology">
+          <div class="pub-top">
+            <div class="pub-badge">Journal</div>
+
+            <div class="pub-meta">
+              <h2 class="pub-title">
+                DNA Structure Design Is Improved Using an Artificially Expanded Alphabet of Base Pairs Including Loop and Mismatch Thermodynamic Parameters
+              </h2>
+
+              <div class="pub-authors">
+                <b>T. M. Pham</b>, T. Miffin, H. Sun, K. K. Sharp, X. Wang, M. Zhu, S. Hoshika, R. J. Peterson,
+                S. A. Benner, J. D. Kahn, and D. H. Mathews
+              </div>
+
+              <div class="pub-venue">ACS Synthetic Biology · 2023</div>
+            </div>
+
+            <div class="pub-actions" aria-label="Links">
+              <a class="pub-btn" href="https://doi.org/10.1021/acssynbio.3c00358" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+
+          <details class="pub-details">
+            <summary class="pub-summary">Abstract &amp; details</summary>
+            <div class="pub-panel">
+              <p>
+                DNA structure design is improved using an artificially expanded alphabet of base pairs, incorporating
+                loop and mismatch thermodynamic parameters to increase design fidelity and predictive performance.
+              </p>
+              <ul class="pub-bullets">
+                <li><b>Venue:</b> ACS Synthetic Biology (2023)</li>
+                <li><b>Keywords:</b> DNA design, expanded base pairs, thermodynamics, loops, mismatches</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+      </section>
     </section>
 
     <footer class="page-footer">
@@ -170,12 +195,13 @@
 
   <script src="script.js"></script>
 
-  <!-- Publications-only filtering/search -->
+  <!-- Unified filtering/search across BOTH sections -->
   <script>
     const searchInput = document.getElementById("pubSearch");
-    const list = document.getElementById("pubList");
-    const items = Array.from(list.querySelectorAll(".pub-item"));
     const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+
+    // Includes pub items + the empty placeholder (so it can hide when filtering/searching)
+    const allEntries = Array.from(document.querySelectorAll(".pub-item, .pub-empty"));
 
     let activeFilter = "all";
 
@@ -187,16 +213,27 @@
     function apply() {
       const q = (searchInput.value || "").trim().toLowerCase();
 
-      items.forEach(el => {
+      allEntries.forEach(el => {
         const type = el.getAttribute("data-type") || "";
         const tags = (el.getAttribute("data-tags") || "").toLowerCase();
-        const text = el.innerText.toLowerCase();
+        const text = (el.innerText || "").toLowerCase();
 
         const matchFilter = (activeFilter === "all") || (type === activeFilter);
         const matchQuery = (!q) || text.includes(q) || tags.includes(q);
 
         el.style.display = (matchFilter && matchQuery) ? "" : "none";
       });
+
+      // If user filters to preprint and no preprints exist, show the placeholder
+      const preprintPlaceholder = document.querySelector(".pub-empty[data-type='preprint']");
+      if (preprintPlaceholder) {
+        const anyVisiblePreprint = Array.from(document.querySelectorAll(".pub-item[data-type='preprint']"))
+          .some(x => x.style.display !== "none");
+        const wantPreprints = (activeFilter === "all" || activeFilter === "preprint");
+        const queryAllows = !q || preprintPlaceholder.innerText.toLowerCase().includes(q);
+
+        preprintPlaceholder.style.display = (wantPreprints && !anyVisiblePreprint && queryAllows) ? "" : "none";
+      }
     }
 
     filterBtns.forEach(btn => {
