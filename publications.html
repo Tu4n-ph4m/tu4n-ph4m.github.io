@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuan Pham | Publications</title>
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Publications-only overrides -->
+  <link rel="stylesheet" href="publications.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-menu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="index.html#about" class="nav-link">About</a>
+
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container fade-in page">
+    <header class="page-header">
+      <h1>Publications</h1>
+      <p class="page-subtitle">
+        Selected papers and preprints across single-cell, spatial omics, and gene regulation.
+      </p>
+    </header>
+
+    <!-- Controls -->
+    <section class="pub-controls" aria-label="Publication controls">
+      <div class="pub-search" role="search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input id="pubSearch" type="text" placeholder="Search title, authors, venue, keywords…" autocomplete="off" />
+      </div>
+
+      <div class="pub-filters" role="tablist" aria-label="Filter publications">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="journal" role="tab" aria-selected="false">Journal</button>
+        <button class="filter-btn" data-filter="conference" role="tab" aria-selected="false">Conference</button>
+        <button class="filter-btn" data-filter="preprint" role="tab" aria-selected="false">Preprint</button>
+      </div>
+    </section>
+
+    <!-- Publications list -->
+    <section class="pub-list" id="pubList" aria-label="Publications list">
+
+      <!-- Publication 1 (EDIT ME) -->
+      <article class="pub-item" data-type="preprint" data-tags="single-cell spatial transcriptomics foundation model diffusion">
+        <div class="pub-top">
+          <div class="pub-badge">Preprint</div>
+
+          <div class="pub-meta">
+            <h2 class="pub-title">DRIFT: Diffusion-based Representation Integration for Spatial Foundation Models</h2>
+            <div class="pub-authors">Tuan Pham, Coauthor A, Coauthor B</div>
+            <div class="pub-venue">bioRxiv · 2025</div>
+          </div>
+
+          <div class="pub-actions" aria-label="Links">
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">PDF</a>
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">Code</a>
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </div>
+
+        <details class="pub-details">
+          <summary class="pub-summary">Abstract & details</summary>
+          <div class="pub-panel">
+            <p>
+              Replace this with your abstract. Keep it 3–6 sentences: problem, approach, key result.
+            </p>
+            <ul class="pub-bullets">
+              <li><b>Highlights:</b> diffusion-based smoothing, improved neighborhood consistency, stronger downstream performance.</li>
+              <li><b>Keywords:</b> spatial transcriptomics, embeddings, diffusion, foundation models.</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- Publication 2 (EDIT ME) -->
+      <article class="pub-item" data-type="conference" data-tags="optimal transport single-cell multi-omics alignment">
+        <div class="pub-top">
+          <div class="pub-badge">Conference</div>
+
+          <div class="pub-meta">
+            <h2 class="pub-title">SCOT+: Scalable Optimal Transport for Single-Cell Multi-Omics Alignment</h2>
+            <div class="pub-authors">Tuan Pham, Coauthor C, Coauthor D</div>
+            <div class="pub-venue">RECOMB · 2025</div>
+          </div>
+
+          <div class="pub-actions" aria-label="Links">
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">PDF</a>
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+
+        <details class="pub-details">
+          <summary class="pub-summary">Abstract & details</summary>
+          <div class="pub-panel">
+            <p>
+              Replace this with your abstract. Mention the objective, scaling strategy, and benchmark outcome.
+            </p>
+            <ul class="pub-bullets">
+              <li><b>Highlights:</b> scalable OT, robust alignment, improved benchmarks.</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <!-- Publication 3 (EDIT ME) -->
+      <article class="pub-item" data-type="journal" data-tags="gene regulation gnn micro-c chip-seq drosophila">
+        <div class="pub-top">
+          <div class="pub-badge">Journal</div>
+
+          <div class="pub-meta">
+            <h2 class="pub-title">Synergistic Transcription Factor Control in <i>Drosophila</i> Using Multi-Modal 3D Genome Features</h2>
+            <div class="pub-authors">Tuan Pham, Coauthor E, Coauthor F</div>
+            <div class="pub-venue">Genome Biology · 2026</div>
+          </div>
+
+          <div class="pub-actions" aria-label="Links">
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">DOI</a>
+            <a class="pub-btn" href="#" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+
+        <details class="pub-details">
+          <summary class="pub-summary">Abstract & details</summary>
+          <div class="pub-panel">
+            <p>
+              Replace this with your abstract. Mention the prediction task, interpretability, and biological insight.
+            </p>
+          </div>
+        </details>
+      </article>
+
+    </section>
+
+    <footer class="page-footer">
+      <p>&copy; 2025 T Pham.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+
+  <!-- Publications-only filtering/search -->
+  <script>
+    const searchInput = document.getElementById("pubSearch");
+    const list = document.getElementById("pubList");
+    const items = Array.from(list.querySelectorAll(".pub-item"));
+    const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
+
+    let activeFilter = "all";
+
+    function setAriaActive(btn) {
+      filterBtns.forEach(b => b.setAttribute("aria-selected", "false"));
+      btn.setAttribute("aria-selected", "true");
+    }
+
+    function apply() {
+      const q = (searchInput.value || "").trim().toLowerCase();
+
+      items.forEach(el => {
+        const type = el.getAttribute("data-type") || "";
+        const tags = (el.getAttribute("data-tags") || "").toLowerCase();
+        const text = el.innerText.toLowerCase();
+
+        const matchFilter = (activeFilter === "all") || (type === activeFilter);
+        const matchQuery = (!q) || text.includes(q) || tags.includes(q);
+
+        el.style.display = (matchFilter && matchQuery) ? "" : "none";
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        setAriaActive(btn);
+
+        activeFilter = btn.getAttribute("data-filter") || "all";
+        apply();
+      });
+    });
+
+    searchInput.addEventListener("input", apply);
+  </script>
+</body>
+</html>
