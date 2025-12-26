@@ -1035,9 +1035,12 @@ body::after {
   justify-content: center;
   align-items: center;
 
-  gap: 0.2rem;          
-  margin-top: 0.75rem; 
+  gap: 0.2rem;
+  margin-top: 0.75rem;
+
+  margin-left: -1rem; /* ⬅ move left by 1rem */
 }
+
 
 /* --- Smooth Hero Socials --- */
 .hero-socials a {
@@ -1200,7 +1203,7 @@ body::after {
 }
 
 #floating-profile .fp-socials {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .project-card .fp-socials {
