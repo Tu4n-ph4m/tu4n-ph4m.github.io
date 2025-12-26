@@ -223,9 +223,9 @@
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = Array.from(document.querySelectorAll(".project"));
 
-  const DURATION = prefersReduced ? 0 : 1000;
-  const EASING_OPEN = "cubic-bezier(0.16, 1, 0.3, 1)";   // smooth “spring-ish”
-  const EASING_CLOSE = "cubic-bezier(0.4, 0, 0.2, 1)";
+  const DURATION = prefersReduced ? 0 : 2000;
+  const EASING_OPEN = "cubic-bezier(0.12, 1.15, 0.28, 1)";
+  const EASING_CLOSE = "cubic-bezier(0.38, 0.02, 0.62, 0.30)";
 
   function animate(detailsEl, opening) {
     const panel = detailsEl.querySelector(".project-panel");
