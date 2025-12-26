@@ -1030,3 +1030,19 @@ body::after {
   margin: 0.4rem 0 0.6rem;
   text-align: left;
 }
+.hero-socials {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-socials a {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.hero-socials a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
