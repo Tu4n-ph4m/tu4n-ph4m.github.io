@@ -1200,9 +1200,13 @@ body::after {
 }
 
 #floating-profile .fp-socials {
-  display: flex;
-  gap: 1rem;  /* wider, but controlled */
+  margin-left: 1rem;
 }
+
+.project-card .fp-socials {
+  margin-left: 0.5rem;
+}
+
 
 
 
