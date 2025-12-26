@@ -154,3 +154,20 @@ window.addEventListener("load", typeWriter);
 
   sections.forEach(section => observer.observe(section));
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const floating = document.getElementById("floating-profile");
+  const hero = document.getElementById("home");
+
+  if (!floating || !hero) return;
+
+  const toggleFloating = () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    // Show once the hero is scrolled past (tune the 80 if you want earlier/later)
+    if (heroBottom < 80) floating.classList.add("show");
+    else floating.classList.remove("show");
+  };
+
+  toggleFloating();
+  window.addEventListener("scroll", toggleFloating, { passive: true });
+  window.addEventListener("resize", toggleFloating);
+});
