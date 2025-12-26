@@ -1167,7 +1167,7 @@ body::after {
 .toc {
   position: fixed;
   left: 3rem;
-  top: 30.25rem;        /* ⬅ moved DOWN */
+  top: 15.25rem;        /* ⬅ moved DOWN */
   transform: none;     /* no vertical centering */
   display: flex;
   flex-direction: column;
