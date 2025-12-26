@@ -947,6 +947,9 @@ body::after {
 #publications .more-projects-link {
   color: #ffffff !important;
 }
+#publications .more-projects-link {
+  font-weight: 700; /* visibly bold */
+}
 
 
 /* Assistant canvas under hero */
@@ -1044,7 +1047,7 @@ body::after {
   gap: 0.1rem;
   margin-top: 0.75rem;
 
-  margin-left: -2rem; /* ⬅ move left by 1rem */
+  margin-left: -2.5rem; /* ⬅ move left by 1rem */
 }
 
 
