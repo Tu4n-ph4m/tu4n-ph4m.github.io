@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tuan Pham | Projects</title>
 
- <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="projects.css" />
+  <!-- Global styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Projects-only overrides -->
+  <link rel="stylesheet" href="projects.css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -37,80 +39,166 @@
       </p>
     </header>
 
-    <section class="grid">
+    <!-- Projects grid -->
+    <section class="projects-grid" aria-label="Projects">
+
       <!-- Project 1 -->
-      <a href="https://github.com/Tu4n-ph4m/GRIDOT" class="featured-project" target="_blank" rel="noopener">
-        <div class="fp-thumb">
-          <img src="network_no_bg.png" alt="GRIDOT visualization" />
-        </div>
-        <div class="fp-content">
-          <h3 class="fp-title">GRIDOT <span class="fp-arrow">↗</span></h3>
-          <p class="fp-desc">
-            Gene regulatory network inference using Optimal Transport and Graph-based Granger Causality.
+      <details class="project" id="gridot">
+        <summary class="project-card">
+          <div class="pc-thumb">
+            <img src="network_no_bg.png" alt="GRIDOT visualization" />
+          </div>
+
+          <div class="pc-main">
+            <h3 class="pc-title">GRIDOT</h3>
+            <p class="pc-subtitle">Optimal Transport + Graph-based Granger Causality for GRN inference</p>
+
+            <div class="pc-tags" aria-label="Tags">
+              <span>Optimal Transport</span>
+              <span>GNN</span>
+              <span>Multi-omics</span>
+              <span>Granger</span>
+            </div>
+          </div>
+
+          <div class="pc-chev" aria-hidden="true">▾</div>
+        </summary>
+
+        <div class="project-panel">
+          <p class="pp-desc">
+            Gene regulatory network inference using Optimal Transport alignment coupled with graph-based Granger
+            causality to recover directed regulatory interactions across conditions and time.
           </p>
-          <div class="fp-tags">
-            <span>Optimal Transport</span>
-            <span>GNN</span>
-            <span>Multi-omics</span>
-            <span>Granger Causality</span>
+
+          <ul class="pp-bullets">
+            <li>Aligns distributions across conditions to stabilize downstream causal estimation.</li>
+            <li>Infers directed edges with interpretable causal scores.</li>
+            <li>Designed for noisy, high-dimensional omics regimes.</li>
+          </ul>
+
+          <div class="pp-links" aria-label="Links">
+            <a class="pp-btn" href="https://github.com/Tu4n-ph4m/GRIDOT" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
-      </a>
+      </details>
 
       <!-- Project 2 -->
-      <a href="https://github.com/rsinghlab/DRIFT" class="featured-project" target="_blank" rel="noopener">
-        <div class="fp-thumb">
-          <img src="brain_no_bg.png" alt="DRIFT spatial modeling" />
-        </div>
-        <div class="fp-content">
-          <h3 class="fp-title">DRIFT <span class="fp-arrow">↗</span></h3>
-          <p class="fp-desc">
-            Diffusion-based Representation Integration for Foundation Models in Spatial Transcriptomics.
+      <details class="project" id="drift">
+        <summary class="project-card">
+          <div class="pc-thumb">
+            <img src="brain_no_bg.png" alt="DRIFT spatial modeling" />
+          </div>
+
+          <div class="pc-main">
+            <h3 class="pc-title">DRIFT</h3>
+            <p class="pc-subtitle">Diffusion-based representation integration for spatial foundation models</p>
+
+            <div class="pc-tags" aria-label="Tags">
+              <span>Foundation Models</span>
+              <span>Spatial Omics</span>
+              <span>Diffusion</span>
+            </div>
+          </div>
+
+          <div class="pc-chev" aria-hidden="true">▾</div>
+        </summary>
+
+        <div class="project-panel">
+          <p class="pp-desc">
+            Diffusion-based Representation Integration for Foundation Models in Spatial Transcriptomics: improves the
+            coherence of embeddings and downstream spatial tasks using diffusion-driven smoothing and integration.
           </p>
-          <div class="fp-tags">
-            <span>Foundation Models</span>
-            <span>Spatial Omics</span>
+
+          <ul class="pp-bullets">
+            <li>Enhances neighborhood consistency while preserving biological variation.</li>
+            <li>Supports robust downstream clustering and spatial pattern recovery.</li>
+          </ul>
+
+          <div class="pp-links" aria-label="Links">
+            <a class="pp-btn" href="https://github.com/rsinghlab/DRIFT" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
-      </a>
+      </details>
 
       <!-- Project 3 -->
-      <a href="https://github.com/rsinghlab/DRIFT" class="featured-project" target="_blank" rel="noopener">
-        <div class="fp-thumb">
-          <img src="odor.png" alt="Odor-associated learning and memory" />
-        </div>
-        <div class="fp-content">
-          <h3 class="fp-title">Odor-associated Learning &amp; Memory <span class="fp-arrow">↗</span></h3>
-          <p class="fp-desc">
-            Modeling gene regulatory mechanisms in olfactory cortex and hypothalamus under different odor conditions.
+      <details class="project" id="odor">
+        <summary class="project-card">
+          <div class="pc-thumb">
+            <img src="odor.png" alt="Odor-associated learning and memory" />
+          </div>
+
+          <div class="pc-main">
+            <h3 class="pc-title">Odor-associated Learning &amp; Memory</h3>
+            <p class="pc-subtitle">Modeling activity-dependent regulation across odor conditions</p>
+
+            <div class="pc-tags" aria-label="Tags">
+              <span>Transcriptomics</span>
+              <span>Single-cell</span>
+              <span>Network Inference</span>
+            </div>
+          </div>
+
+          <div class="pc-chev" aria-hidden="true">▾</div>
+        </summary>
+
+        <div class="project-panel">
+          <p class="pp-desc">
+            Modeling gene regulatory mechanisms in olfactory cortex and hypothalamus under distinct odor paradigms,
+            focusing on activity-dependent programs and candidate regulators.
           </p>
-          <div class="fp-tags">
-            <span>GNN</span>
-            <span>Optimal Transport</span>
-            <span>Transcriptomics</span>
-            <span>Single-cell</span>
+
+          <ul class="pp-bullets">
+            <li>Contrasts condition-specific transcriptional programs.</li>
+            <li>Prioritizes candidate regulators for follow-up.</li>
+          </ul>
+
+          <div class="pp-links" aria-label="Links">
+            <!-- Replace with your actual link when available -->
+            <a class="pp-btn" href="index.html#contact">Contact for details</a>
           </div>
         </div>
-      </a>
+      </details>
 
       <!-- Project 4 -->
-      <a href="https://github.com/rsinghlab/DRIFT" class="featured-project" target="_blank" rel="noopener">
-        <div class="fp-thumb">
-          <img src="multimodal.png" alt="Synergistic TF control in Drosophila" />
-        </div>
-        <div class="fp-content">
-          <h3 class="fp-title">Synergistic TF Control in <i>Drosophila</i> <span class="fp-arrow">↗</span></h3>
-          <p class="fp-desc">
-            Multimodal modeling of <i>Drosophila</i> transcription factors involved in synapse formation and dosage compensation.
+      <details class="project" id="drosophila">
+        <summary class="project-card">
+          <div class="pc-thumb">
+            <img src="multimodal.png" alt="Synergistic TF control in Drosophila" />
+          </div>
+
+          <div class="pc-main">
+            <h3 class="pc-title">Synergistic TF Control in <i>Drosophila</i></h3>
+            <p class="pc-subtitle">Multimodal modeling of TF synergy using ChIP-seq and Micro-C</p>
+
+            <div class="pc-tags" aria-label="Tags">
+              <span>ChIP-seq</span>
+              <span>Micro-C</span>
+              <span>Multi-omics</span>
+              <span>GNN</span>
+            </div>
+          </div>
+
+          <div class="pc-chev" aria-hidden="true">▾</div>
+        </summary>
+
+        <div class="project-panel">
+          <p class="pp-desc">
+            Multimodal modeling of <i>Drosophila</i> transcription factors involved in synapse formation and dosage
+            compensation, integrating sequence, binding, and 3D genome features for interpretable prediction.
           </p>
-          <div class="fp-tags">
-            <span>GNN</span>
-            <span>ChIP-seq</span>
-            <span>Micro-C</span>
-            <span>Multi-omics</span>
+
+          <ul class="pp-bullets">
+            <li>Combines binding profiles with 3D contact structure.</li>
+            <li>Targets interpretable TF interactions and combinatorial effects.</li>
+          </ul>
+
+          <div class="pp-links" aria-label="Links">
+            <!-- Replace with your actual link when available -->
+            <a class="pp-btn" href="index.html#contact">Contact for details</a>
           </div>
         </div>
-      </a>
+      </details>
+
     </section>
 
     <footer class="page-footer">
@@ -119,5 +207,17 @@
   </main>
 
   <script src="script.js"></script>
+
+  <!-- Optional: only one project open at a time -->
+  <script>
+    document.querySelectorAll(".project").forEach(d => {
+      d.addEventListener("toggle", () => {
+        if (!d.open) return;
+        document.querySelectorAll(".project").forEach(other => {
+          if (other !== d) other.open = false;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
