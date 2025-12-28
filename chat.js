@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const BACKEND_URL = "https://chat-backend-97qa.vercel.app/api";
 
   // Initial greeting (optional)
-addMessage("Hi! I’m Elory — Tuan’s AI assistant-in-training. I’m learning fast and happy to help.", "bot");
+addMessage("Hi! I’m Elo — Tuan’s AI assistant-in-training. I'm here to help!", "bot");
 
   // Submit handler for the search-bar style assistant
   barForm.addEventListener("submit", (e) => {
