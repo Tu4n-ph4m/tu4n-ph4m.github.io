@@ -1296,3 +1296,9 @@ body::after {
 .pub-list em a:hover {
   text-decoration: underline;
 }
+.hero-identity {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-top: 0.5rem;
+}
