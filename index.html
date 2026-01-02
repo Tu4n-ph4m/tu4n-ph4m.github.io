@@ -110,13 +110,51 @@
                 <h1>
                   <span id="typed-text"></span><span class="cursor">|</span>
                 </h1>
-                <p class="hero-identity">
- <strong>PhD Candidate</strong> in <strong>Computational Molecular Biology</strong> at
+               <p class="hero-identity">
+  <span id="typed-identity"></span>
+</p>
+
+const identityText = `
+<strong>PhD Candidate</strong> in <strong>Computational Molecular Biology</strong> at
 <strong>Brown University</strong>, developing <strong>machine learning–based</strong> approaches to
 <strong>gene regulatory modeling</strong> using <strong>single-cell</strong> and
 <strong>spatial genomics</strong>, with strong interests in <strong>structural biology</strong> and
 <strong>foundation models</strong>.
-</p>
+`;
+
+function typeHTML(element, html, speed = 18) {
+  let i = 0;
+  let isTag = false;
+  let buffer = "";
+
+  function type() {
+    if (i < html.length) {
+      const char = html[i];
+
+      if (char === "<") isTag = true;
+      if (isTag) buffer += char;
+      else element.innerHTML += char;
+
+      if (char === ">") {
+        isTag = false;
+        element.innerHTML += buffer;
+        buffer = "";
+      }
+
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
+}
+
+// Start typing AFTER name finishes
+setTimeout(() => {
+  const identityEl = document.getElementById("typed-identity");
+  typeHTML(identityEl, identityText, 14);
+}, 1200); // adjust delay to match name typing
+
 
                 
                 
