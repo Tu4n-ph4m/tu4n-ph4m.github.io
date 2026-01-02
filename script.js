@@ -171,3 +171,25 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", toggleFloating, { passive: true });
   window.addEventListener("resize", toggleFloating);
 });
+
+const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+
+tocLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    const id = link.getAttribute("href").slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    e.preventDefault();
+
+    // Smooth scroll
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+    // Activate label immediately on click
+    tocLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
