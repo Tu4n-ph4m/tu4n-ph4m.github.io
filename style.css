@@ -1113,8 +1113,9 @@ body::after {
   padding: 1rem 1.25rem;
   border-radius: 18px;
 
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.14);
+background: color-mix(in srgb, var(--card-bg) 75%, transparent);
+border: 1px solid var(--border);
+
   backdrop-filter: blur(12px);
 
   opacity: 0;
@@ -1145,9 +1146,9 @@ body::after {
 
 
 #floating-profile .fp-socials a {
-  color: #ffffff;
-  font-size: 1.2rem;   
-  opacity: 0.85;
+  color: var(--text-color);     /* adapts to dark/light */
+  font-size: 1.2rem;
+  opacity: 0.75;
   transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
 }
 
@@ -1155,7 +1156,9 @@ body::after {
   opacity: 1;
   transform: translateY(-2px);
   color: var(--accent);
+
 }
+
 
 
 /* Avoid clutter on small screens */
