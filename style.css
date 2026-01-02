@@ -817,6 +817,10 @@ body::after {
   font-weight: 600;
 }
 
+/* Make anchor jumps account for sticky header / floating UI */
+section[id]{
+  scroll-margin-top: 120px; /* tweak: try 90–160 */
+}
 
 
 .card-image {
