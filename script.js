@@ -193,3 +193,27 @@ tocLinks.forEach(link => {
     link.classList.add("active");
   });
 });
+
+const sections = document.querySelectorAll("section[id]");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const id = entry.target.id;
+      tocLinks.forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${id}`
+        );
+      });
+    });
+  },
+  {
+    rootMargin: "-40% 0px -50% 0px",
+    threshold: 0
+  }
+);
+
+sections.forEach(section => observer.observe(section));
