@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tuan Pham | Projects</title>
+  <meta name="description" content="Research projects on gene regulatory network inference, spatial transcriptomics, and multi-omic machine learning by Tuan Pham." />
+  <title>Projects | Tuan Pham | Gene Regulation & Spatial Omics | Brown University</title>
 
   <!-- Global styles -->
   <link rel="stylesheet" href="style.css" />
@@ -33,9 +34,9 @@
 
   <main class="container fade-in page">
     <header class="page-header">
-      <h1>Projects</h1>
+      <h1>Research Projects</h1>
       <p class="page-subtitle">
-        Selected work across gene regulation, multimodal learning, and network inference.
+        Work on computational gene regulation, machine learning for multi-omic data integration, and spatial transcriptomics.
       </p>
     </header>
 
@@ -46,18 +47,18 @@
       <details class="project" id="gridot">
         <summary class="project-card">
           <div class="pc-thumb">
-            <img src="network_no_bg.png" alt="GRIDOT visualization" />
+            <img src="network_no_bg.png" alt="GRIDOT gene regulatory network visualization" />
           </div>
 
           <div class="pc-main">
             <h3 class="pc-title">GRIDOT</h3>
-            <p class="pc-subtitle">Optimal Transport + Graph-based Granger Causality for GRN inference</p>
+            <p class="pc-subtitle">Gene Regulatory Network Inference via Optimal Transport and Granger Causality</p>
 
             <div class="pc-tags" aria-label="Tags">
               <span>Optimal Transport</span>
               <span>GNN</span>
               <span>Multi-omics</span>
-              <span>Granger</span>
+              <span>Granger Causality</span>
             </div>
           </div>
 
@@ -79,9 +80,9 @@
           </p>
 
           <ul class="pp-bullets">
-            <li>Aligns distributions across conditions to stabilize downstream causal estimation.</li>
-            <li>Infers directed edges with interpretable causal scores.</li>
-            <li>Designed for noisy, high-dimensional omics regimes.</li>
+            <li>Aligns distributions across conditions using optimal transport to stabilize downstream causal estimation.</li>
+            <li>Infers directed edges with interpretable causal scores using graph-based Granger causality.</li>
+            <li>Designed for noisy, high-dimensional omics regimes with multi-omic data integration.</li>
           </ul>
 
           <div class="pp-links" aria-label="Links">
@@ -94,12 +95,12 @@
       <details class="project" id="drift">
         <summary class="project-card">
           <div class="pc-thumb">
-            <img src="brain_no_bg.png" alt="DRIFT spatial modeling" />
+            <img src="brain_no_bg.png" alt="DRIFT spatial transcriptomics modeling" />
           </div>
 
           <div class="pc-main">
             <h3 class="pc-title">DRIFT</h3>
-            <p class="pc-subtitle">Diffusion-based representation integration for spatial foundation models</p>
+            <p class="pc-subtitle">Diffusion-based Representation Integration for Foundation Models in Spatial Transcriptomics</p>
 
             <div class="pc-tags" aria-label="Tags">
               <span>Foundation Models</span>
@@ -114,7 +115,7 @@
         <div class="project-panel">
           <p class="pp-desc">
            DRIFT is a scalable diffusion framework that denoises expression profiles and integrates the spatial 
-            topology of ST data into existing pretrained scRNA-seq and ST foundation models without additional retraining.
+            topology of spatial transcriptomics (ST) data into existing pretrained scRNA-seq and ST foundation models without additional retraining.
             Foundation models that do not explicitly model spatial information benefit from both denoising and spatial integration, 
             while methods that do so leverage DRIFT's denoised output. DRIFT constructs a spatial adjacency graph among tissue spots 
             and applies a heat-kernel diffusion process that propagates gene-expression signals across local neighborhoods 
@@ -126,8 +127,9 @@
           </p>
 
           <ul class="pp-bullets">
-            <li>Enhance neighborhood consistency while preserving biological variation.</li>
-            <li>Support robust downstream clustering and spatial pattern recovery.</li>
+            <li>Enhance neighborhood consistency while preserving biological variation in spatial transcriptomics.</li>
+            <li>Support robust downstream clustering and spatial pattern recovery without model retraining.</li>
+            <li>Integrate with existing foundation models for scalable multi-omic analysis.</li>
           </ul>
 
           <div class="pp-links" aria-label="Links">
@@ -140,12 +142,12 @@
       <details class="project" id="odor">
         <summary class="project-card">
           <div class="pc-thumb">
-            <img src="odor.png" alt="Odor-associated learning and memory" />
+            <img src="odor.png" alt="Odor-associated learning and memory gene regulation" />
           </div>
 
           <div class="pc-main">
             <h3 class="pc-title">Odor-associated Learning &amp; Memory</h3>
-            <p class="pc-subtitle">Modeling activity-dependent regulation across odor conditions</p>
+            <p class="pc-subtitle">Gene Regulatory Network Analysis in Olfactory Circuits</p>
 
             <div class="pc-tags" aria-label="Tags">
               <span>Transcriptomics</span>
@@ -160,17 +162,21 @@
         <div class="project-panel">
           <p class="pp-desc">
             Modeling gene regulatory mechanisms in olfactory cortex and hypothalamus under distinct odor paradigms,
-            focusing on activity-dependent programs and candidate regulators.
+            focusing on activity-dependent programs and candidate regulators of learning and memory. This project integrates 
+            single-cell RNA-sequencing with gene regulatory network inference methods including optimal transport and graph 
+            neural networks to understand how transcription factors control cell-type-specific gene expression during odor 
+            learning and memory formation.
           </p>
 
           <ul class="pp-bullets">
-            <li>Contrasts condition-specific transcriptional programs.</li>
-            <li>Prioritizes candidate regulators for follow-up.</li>
+            <li>Contrasts condition-specific transcriptional programs across odor learning paradigms.</li>
+            <li>Prioritizes candidate regulators (transcription factors) for follow-up validation.</li>
+            <li>Uses graph-based network inference on single-cell data for cell-type resolution.</li>
           </ul>
 
           <div class="pp-links" aria-label="Links">
             <!-- Replace with your actual link when available -->
-            <a class="pp-btn" href="index.html#contact">Contact for details</a>
+            <a class="pp-btn" href="https://www.nature.com/articles/s41593-025-01924-3">Published in Nature Neuroscience ↗</a>
           </div>
         </div>
       </details>
@@ -179,12 +185,12 @@
       <details class="project" id="drosophila">
         <summary class="project-card">
           <div class="pc-thumb">
-            <img src="multimodal.png" alt="Synergistic TF control in Drosophila" />
+            <img src="multimodal.png" alt="Synergistic TF control in Drosophila multi-omic analysis" />
           </div>
 
           <div class="pc-main">
             <h3 class="pc-title">Synergistic TF Control in <i>Drosophila</i></h3>
-            <p class="pc-subtitle">Multimodal modeling of TF synergy using ChIP-seq and Micro-C</p>
+            <p class="pc-subtitle">Multi-omic Gene Regulatory Modeling using ChIP-seq and Micro-C</p>
 
             <div class="pc-tags" aria-label="Tags">
               <span>ChIP-seq</span>
@@ -200,17 +206,20 @@
         <div class="project-panel">
           <p class="pp-desc">
             Multimodal modeling of <i>Drosophila</i> transcription factors involved in synapse formation and dosage
-            compensation, integrating sequence, binding, and 3D genome features for interpretable prediction.
+            compensation, integrating sequence, binding (ChIP-seq), and 3D genome features (Micro-C) for interpretable 
+            prediction of transcription factor synergy. This work uses graph neural networks to model how multiple 
+            transcription factors coordinately regulate gene expression through 3D chromatin interactions.
           </p>
 
           <ul class="pp-bullets">
-            <li>Combines binding profiles with 3D contact structure.</li>
-            <li>Targets interpretable TF interactions and combinatorial effects.</li>
+            <li>Combines transcription factor binding profiles with 3D contact structure from Micro-C.</li>
+            <li>Targets interpretable TF interactions and combinatorial effects on gene regulation.</li>
+            <li>Applies graph neural networks to predict synergistic transcription factor control.</li>
           </ul>
 
           <div class="pp-links" aria-label="Links">
             <!-- Replace with your actual link when available -->
-            <a class="pp-btn" href="index.html#contact">Contact for details</a>
+            <a class="pp-btn" href="https://www.biorxiv.org/content/10.1101/2024.10.30.621128v3">See preprint ↗</a>
           </div>
         </div>
       </details>
