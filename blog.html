@@ -73,8 +73,43 @@
             font-size: 1.8rem;
         }
 
+        h3 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
         p {
             margin-bottom: 1.5rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--accent-color);
+        }
+
+        .highlight {
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .paper-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .paper-link:hover {
+            text-decoration: underline;
         }
 
         .read-more {
@@ -108,14 +143,71 @@
     <article class="blog-post">
         <div class="post-meta">
             <span class="tag">Research</span>
+            <span class="date">July 9, 2026</span>
+        </div>
+        <h2>Do We Really Need <em>More</em> Data, or Just a Smarter Way to Handle It?</h2>
+        <p>
+            Lately, I've been thinking a lot about the direction we're heading with foundation models in biology.
+        </p>
+        <p>
+            If you look at the current landscape, the playbook seems to be "bigger is always better." In Spatial Transcriptomics (ST), the status quo is to train massive models from scratch on millions of cells. But if we're being honest, a lot of these "revolutionary new models" feel less like breakthroughs in AI engineering and more like an excuse for big players to flex their proprietary datasets. The transformer architectures stay mostly the same; the real moat is just having the deep pockets to buy, scrape, or gatekeep massive amounts of data and burn endless compute.
+        </p>
+        <p>
+            It turns the field into a game of <span class="highlight">who has the biggest budget</span>, rather than <span class="highlight">who is making the smartest engineering choices</span>. It completely prices out smaller, independent labs.
+        </p>
+        <p>
+            That's exactly why we wanted to take a different approach. <strong>What if the real breakthrough isn't accumulating bigger data, but simply being smarter with what we already have?</strong>
+        </p>
+
+        <h3>The Idea Behind DRIFT</h3>
+        <p>
+            I'm incredibly proud to share <strong>DRIFT</strong> (<em>Diffusion-based Representation Integration for Foundation Models</em>), our new framework just published as an <strong>ISMB 2026 Proceeding in Bioinformatics</strong>!
+        </p>
+        <p>
+            Instead of playing the game of data-monopoly and reinventing the wheel, we built DRIFT as a plug-and-play module. It incorporates spatial context and drastically denoises data using mathematically principled heat diffusion through graphs.
+        </p>
+        <p>
+            The part I'm most excited about? <strong>It requires absolutely zero retraining.</strong>
+        </p>
+        <p>
+            It plugs right into existing, frozen scRNA-seq foundation models. Instead of spending weeks and thousands of dollars training a model from scratch, DRIFT gives you deep spatial awareness instantly. We wanted to focus on the <span class="highlight">how</span> (the elegant math) rather than the <span class="highlight">how much</span> (throwing raw computing power at the problem).
+        </p>
+
+        <h3>Why This Matters to Me (and Our Field)</h3>
+        <p>
+            When we benchmarked DRIFT, the results genuinely blew me away:
+        </p>
+        <ul>
+            <li><strong>It just works across the board:</strong> We saw drastic performance leaps in core single-cell and ST tasks like cell-type annotation, slice alignment, and unsupervised clustering.</li>
+            <li><strong>It adapts to anything:</strong> It consistently outperformed highly specialized, task-specific models across a ton of different, cutting-edge ST technologies.</li>
+            <li><strong>It levels the playing field:</strong> Because it slashes computational costs, it means universal ST modeling is suddenly scalable for <em>any</em> lab—not just the ones with massive tech budgets.</li>
+        </ul>
+        <p>
+            At the end of the day, more isn't always better. Real innovation shouldn't belong exclusively to whoever has the biggest server farm. Sometimes, it's just about making the open data you already have work a whole lot harder for you.
+        </p>
+
+        <h3>Check Out the Paper</h3>
+        <p>
+            If you want to dive into the math, look at the benchmarks, or see how we pulled it off, you can read our full paper here:
+        </p>
+        <p>
+            <a href="https://academic.oup.com/bioinformatics/article/42/Supplement_1/btag259/8726325?login=false" class="paper-link" target="_blank">
+                Diffusion-based representation integration for foundation models improves spatial transcriptomics analysis
+            </a>
+        </p>
+    </article>
+
+    <article class="blog-post">
+        <div class="post-meta">
+            <span class="tag">Research</span>
             <span class="date">May 15, 2026</span>
         </div>
         <h2>The State of Single-Cell RNA Foundation Models: Beyond scGPT</h2>
         <p>
-            The landscape of single-cell transcriptomics has shifted dramatically. While early models like <strong>scGPT</strong> and <strong>Geneformer</strong> proved that pre-training on large-scale cell atlases is viable, 2024–2025 papers have introduced a new generation of architectures focusing on cross-modality and context-specific refinement.
+            The landscape of single-cell transcriptomics has shifted dramatically. While early models like <strong>scGPT</strong> and <strong>Geneformer</strong> proved that pre-training on large[...]
         </p>
         <p>
-            Recent updates emphasize the move toward <em>multi-modal</em> foundation models that don't just predict gene expression, but integrate chromatin accessibility (scATAC-seq) and spatial proteomics. Key papers like <strong>scFoundation v2</strong> and the <strong>CellPLM</strong> series demonstrate that scaling laws in biology require different inductive biases compared to natural language processing.
+            Recent updates emphasize the move toward <em>multi-modal</em> foundation models that don't just predict gene expression, but integrate chromatin accessibility (scATAC-seq) and spatial[...]
         </p>
         <p>
             In this post, we break down the performance benchmarks of the latest "Scaling Bio" papers and discuss why tokenization remains the biggest hurdle in genomic foundation models.
