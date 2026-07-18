@@ -1364,3 +1364,55 @@ border: 1px solid var(--border);
   max-width: 700px;
   margin-top: 0.5rem;
 }
+/* Container for the timeline list */
+.horizontal-timeline {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  list-style: none;
+  padding: 20px 0;
+  position: relative;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* The horizontal line running through the timeline */
+.horizontal-timeline::before {
+  content: '';
+  position: absolute;
+  top: 45px; /* Adjust based on your text/circle placement */
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: var(--accent, #ccc); /* Uses your site's accent color */
+  z-index: 1;
+}
+
+/* Individual timeline item nodes */
+.horizontal-timeline li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+}
+
+/* Time/Date styling acting as the node anchor */
+.horizontal-timeline time {
+  display: inline-block;
+  background: var(--background, #fff); /* Matches your background to cut the line */
+  padding: 4px 10px;
+  border: 2px solid var(--accent, #007bff);
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Content block styling under the date */
+.horizontal-timeline .content {
+  font-size: 0.95rem;
+  max-width: 200px;
+  padding: 0 10px;
+}
