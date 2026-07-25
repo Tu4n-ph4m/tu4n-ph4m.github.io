@@ -1429,3 +1429,23 @@ border: 1px solid var(--border);
 [data-theme="dark"] .horizontal-timeline .content {
   color: #a3bead; /* A soft, illuminated sage green for the dark theme */
 }
+.horizontal-timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-timeline li {
+  flex: 0 0 auto;
+  min-width: 240px;
+  scroll-snap-align: start;
+}
+
+.horizontal-timeline .content {
+  max-width: 100%;
+}
