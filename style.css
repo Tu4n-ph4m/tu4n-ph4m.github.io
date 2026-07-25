@@ -1400,52 +1400,71 @@ border: 1px solid var(--border);
   z-index: 2;
 }
 
-/* Time/Date Badges */
-.horizontal-timeline time {
-  display: inline-block;
-  background: var(--card-bg); /* Seamless blend with your light/dark cards */
-  padding: 4px 14px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent); /* Uses your professional accent blue/light-blue */
-  margin-bottom: 15px;
-  box-shadow: var(--shadow);
-}
-
-/* Content block styling under the date */
-.horizontal-timeline .content {
-  font-size: 0.95rem;
-  font-weight: 500;
-  max-width: 220px;
-  padding: 0 10px;
-  
-  /* Blackish Green Font Selection */
-  color: #1b2e24; 
-}
-
-/* Dark mode adjustment to ensure the dark green remains highly legible */
-[data-theme="dark"] .horizontal-timeline .content {
-  color: #a3bead; /* A soft, illuminated sage green for the dark theme */
-}
+/* Horizontal scroll timeline */
 .horizontal-timeline {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
+  gap: 1.5rem;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
+  padding: 2rem 0 1rem;
+  margin: 0;
+  list-style: none;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
 }
 
-.horizontal-timeline li {
-  flex: 0 0 auto;
-  min-width: 240px;
-  scroll-snap-align: start;
+/* the connecting line */
+.horizontal-timeline::before {
+  content: "";
+  position: absolute;
+  top: 1.15rem; /* aligns with the time dots */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
 }
 
+/* each update item */
+.horizontal-timeline li {
+  position: relative;
+  flex: 0 0 260px;
+  padding-top: 2rem;
+  scroll-snap-align: start;
+  z-index: 1;
+}
+
+/* the dot on the line */
+.horizontal-timeline li time {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent);
+  padding-left: 1.5rem;
+}
+
+/* dot marker */
+.horizontal-timeline li time::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-color);
+  box-shadow: 0 0 0 2px var(--border);
+}
+
+/* update content card */
 .horizontal-timeline .content {
-  max-width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
 }
