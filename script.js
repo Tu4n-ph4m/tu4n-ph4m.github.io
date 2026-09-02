@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-const fullText = "Hello, I'm Tuan Pham.";
+const fullText = "Hello, I'm Tuan Pham. Welcome to my website!";
 const name = "Tuan Pham";
 const speed = 70;
 
